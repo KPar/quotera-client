@@ -1,8 +1,20 @@
-import { Fragment, useRef } from "react";
+import {useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import "../Home/home.css"
 
 function Home() {
+  const styles = {
+    container: {
+      width: "100%"
+    },
+    contentContainer: {
+      textAlign: "center"
+    },
+    siteName : {
+      fontSize: "90px",
+      fontFamily: "Open Sans, sans-serif"
+    }
+  }
+
   let navigate = useNavigate();
   const searchRef = useRef();
 
@@ -12,18 +24,17 @@ function Home() {
   }
   
   return (
-    <Fragment>
-      <div id="wrapper">
-        <Link to = "/sign-in"> Sign In </Link>
-        <Link to = "/sign-up"> Sign Up </Link>
-
-        <h1 id="siteName">ReadSum</h1>
+    <div style={styles.container}>
+      <Link to = "/sign-in"> Sign In </Link>
+      <Link to = "/sign-up"> Sign Up </Link>
+      <div style={styles.contentContainer}>
+        <h1 style={styles.siteName}>ReadSum</h1>
         <form onSubmit={handleSubmit}>
           <input ref={searchRef} type="search" name="search" placeholder="Title / ISBN ..."/>
           <input type="submit" value="Search"/>
         </form>
       </div>
-    </Fragment>
+    </div>
     
     
   )

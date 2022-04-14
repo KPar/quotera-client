@@ -1,3 +1,10 @@
 p, h1 {
     font-family: sans-serif;
 }
+
+#divider {
+    height: "0.5px";
+    background-color: "#c7c7c7";
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@700&family=Open+Sans&display=swap');

@@ -1,4 +1,5 @@
-import BookResultsList from '../../components/BookResults/BookResultsList'
+import BookResultsList from '../components/BookResults/BookResultsList'
+
 
 function BookResults() {
 

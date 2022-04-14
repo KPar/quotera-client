@@ -1,15 +1,15 @@
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
-import ErrorPage from "./pages/ErrorPage/ErrorPage";
-import Home from "./pages/Home/Home";
-import Profile from "./pages/Profile/Profile";
-import SignIn from "./pages/SignIn/SignIn";
-import SignUp from "./pages/SignUp/SignUp";
-import Settings from "./pages/Settings/Settings";
-import ReadBookSummary from "./pages/ReadBookSummary/ReadBookSummary";
-import CreateBookSummary from "./pages/CreateBookSummary/CreateBookSummary";
-import EditBookSummary from "./pages/EditBookSummary/EditBookSummary";
-import BookResults from "./pages/BookResults/BookResults";
-import SummariesResults from "./pages/SummariesResults/SummariesResults";
+import ErrorPage from "./pages/ErrorPage";
+import Home from "./pages/Home";
+import Profile from "./pages/Profile";
+import SignIn from "./pages/SignIn";
+import SignUp from "./pages/SignUp";
+import Settings from "./pages/Settings";
+import ReadBookSummary from "./pages/ReadBookSummary";
+import CreateBookSummary from "./pages/CreateBookSummary";
+import EditBookSummary from "./pages/EditBookSummary";
+import BookResults from "./pages/BookResults";
+import SummariesResults from "./pages/SummariesResults";
 
 
 
