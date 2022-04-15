@@ -4,9 +4,10 @@ import ProfileSummariesList from "../components/Profile/ProfileSummariesList"
 function Profile() {
 
   return (
-    <div style={{display:"flex"}}>
+    <div style={{width:"70vw", margin:"auto"}}>
       <ProfileBio/>
-      <div style={{display:"block", width:"100%", marginLeft:"50px"}}>
+      <h1 style={{textAlign:"center"}}>Summaries</h1>
+      <div style={{display:"block", width:"100%"}}>
         <ProfileSummariesList/>
       </div>
     </div>
