@@ -1,6 +1,15 @@
+import ProfileBio from "../components/Profile/ProfileBio"
+import ProfileSummariesList from "../components/Profile/ProfileSummariesList"
+
 function Profile() {
+
   return (
-    <div>Profile</div>
+    <div style={{display:"flex"}}>
+      <ProfileBio/>
+      <div style={{display:"block", width:"100%", marginLeft:"50px"}}>
+        <ProfileSummariesList/>
+      </div>
+    </div>
   )
 }
 

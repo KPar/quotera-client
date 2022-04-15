@@ -7,4 +7,8 @@ p, h1 {
     background-color: "#c7c7c7";
 }
 
+body {
+    margin:0;
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@700&family=Open+Sans&display=swap');

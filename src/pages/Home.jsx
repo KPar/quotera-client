@@ -27,6 +27,7 @@ function Home() {
     <div style={styles.container}>
       <Link to = "/sign-in"> Sign In </Link>
       <Link to = "/sign-up"> Sign Up </Link>
+      <button>Write</button>
       <div style={styles.contentContainer}>
         <h1 style={styles.siteName}>ReadSum</h1>
         <form onSubmit={handleSubmit}>
