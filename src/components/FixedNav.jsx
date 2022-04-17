@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { matchPath, useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 function FixedNav() {
   const styles = {
@@ -53,6 +53,7 @@ function FixedNav() {
           <input type="submit" value="Search"/>
         </form>
         <button style={{display: isEditPage? "block": "none" }}>Publish</button>
+        <button style={{display: isEditPage? "none": "block" }}>Write</button>
         <div style={{display: isUserAuth? "none": "block"}}>
           <button>Log In</button>
           <button>Sign Up</button>
