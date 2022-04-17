@@ -9,6 +9,9 @@ function ReadBookSummary() {
       fontFamily: "Nanum Myeongjo, serif",
       width: "60%",
       
+    },
+    container: {
+      marginTop:"100px"
     }
   }
   const [data, setdata] = useState([]);
@@ -26,7 +29,7 @@ function ReadBookSummary() {
  },[]);
 
   return (
-    <div>
+    <div style={styles.container}>
       <h1>{data.title}</h1>
       <p style={styles.content}>{data.content}</p>
     </div>

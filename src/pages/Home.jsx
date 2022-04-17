@@ -4,7 +4,8 @@ import { Link, useNavigate } from "react-router-dom";
 function Home() {
   const styles = {
     container: {
-      width: "100%"
+      width: "100%",
+      marginTop:"100px"
     },
     contentContainer: {
       textAlign: "center"

@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 function ProfileBio() {
   const styles = {
       container: {
-          height: "200px",
+          height: "fit-content",
           width: "100%",
           borderBottom:"solid 0.5px"
       }
@@ -16,7 +16,8 @@ function ProfileBio() {
     setBioData({
         displayName: "Tom Ford",
         username: "qqwwee",
-        createdOn: "June 20,2020"
+        createdOn: "June 20,2020",
+        bioInfo: "I like flying kites"
     })
    },[]);
 
@@ -24,6 +25,7 @@ function ProfileBio() {
     <div style={styles.container}>
         <h1>{bioData.displayName}</h1>
         <h2>{bioData.username}</h2>
+        <p>{bioData.bioInfo}</p>
         <p>Joined {bioData.createdOn}</p>
     </div>
   )

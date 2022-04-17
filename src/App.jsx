@@ -2,22 +2,25 @@ import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import ErrorPage from "./pages/ErrorPage";
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
-import SignIn from "./pages/SignIn";
+import LogIn from "./pages/LogIn";
 import SignUp from "./pages/SignUp";
 import Settings from "./pages/Settings";
 import ReadBookSummary from "./pages/ReadBookSummary";
 import CreateOrEditSummary from "./pages/CreateOrEditSummary";
 import BookResults from "./pages/BookResults";
 import SummariesResults from "./pages/SummariesResults";
+import FixedNav from "./components/FixedNav";
 
 
 
-function App() {
+function App() {  
+
   return (
     <Router>
+      <FixedNav/>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/sign-in" element={<SignIn />} />
+        <Route path="/log-in" element={<LogIn />} />
         <Route path="/sign-up" element={<SignUp />} />
         <Route path="/settings" element={<Settings />} />
         <Route path="/users/:userID" element={<Profile />} />

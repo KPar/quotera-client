@@ -3,10 +3,10 @@ import SummariesResultsList from '../components/SummariesResults/SummariesResult
 
 function SummariesResults() {
   return (
-    <>
+    <div style={{marginTop:"100px"}}>
       <h1>Summaries Results</h1>
       <SummariesResultsList/>
-    </>
+    </div>
   )
 }
 

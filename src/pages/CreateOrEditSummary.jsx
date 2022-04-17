@@ -1,13 +1,14 @@
 import { useState } from 'react'
 import ReactMarkdown from 'react-markdown'
-import FixedNav from '../components/CreateOrEditSummary/FixedNav'
+import FixedNav from '../components/FixedNav'
 
 
 function CreateOrEditSummary() {
   const styles = {
     container: {
       height: "90vh",
-      width: "100%"
+      width: "100%",
+      marginTop:"100px"
     },
     summaryField: {
       marginTop: "10vh",
@@ -42,7 +43,6 @@ function CreateOrEditSummary() {
   if(isEdit){
     return (
       <div style={styles.container}>
-        <FixedNav publish = {publish}/>
         <h1>Joe's Summary</h1>
         <h2>of Harry Potter By JK</h2>
         <div style={styles.summaryField} contentEditable> </div>
@@ -52,7 +52,6 @@ function CreateOrEditSummary() {
 
   return (
     <div style={styles.container}>
-        <FixedNav publish = {publish}/>
         <div style={styles.summaryField}> </div>
     </div>
   )

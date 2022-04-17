@@ -10,7 +10,7 @@ const schema = yup.object().shape({
 
 
 
-function SignIn() {
+function LogIn() {
   const {register, handleSubmit, formState: {errors}} = useForm({
       resolver: yupResolver(schema)
     });
@@ -20,7 +20,7 @@ function SignIn() {
   }
   return (
     <>
-      <h1>Sign In</h1>
+      <h1>Log In</h1>
       <form onSubmit={handleSubmit(submitForm)}>
         <input type="text" name='Username' placeholder='Username...' {...register("Username")}/>
         <p>{errors.Username?.message}</p>
@@ -35,4 +35,4 @@ function SignIn() {
   )
 }
 
-export default SignIn
+export default LogIn
