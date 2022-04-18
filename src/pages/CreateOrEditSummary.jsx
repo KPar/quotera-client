@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import ReactMarkdown from 'react-markdown'
+import PublishNav from '../components/CreateOrEditSummary/PublishNav'
 import FixedNav from '../components/FixedNav'
 
 
@@ -34,7 +35,7 @@ function CreateOrEditSummary() {
   }
   */
 
-  const [isEdit, setIsEdit] = useState(false)
+  const [isEdit, setIsEdit] = useState(true)
 
   const publish = () => {
     setIsEdit(!isEdit)
@@ -42,17 +43,20 @@ function CreateOrEditSummary() {
 
   if(isEdit){
     return (
-      <div style={styles.container}>
-        <h1>Joe's Summary</h1>
-        <h2>of Harry Potter By JK</h2>
-        <div style={styles.summaryField} contentEditable> </div>
-      </div>
+      <>
+        <PublishNav/>
+        <div style={styles.container}>
+          <h1>Joe's Summary</h1>
+          <h2>of Harry Potter By JK</h2>
+          <div style={styles.summaryField} contentEditable> </div>
+        </div>
+      </>
     ) 
   } 
 
   return (
     <div style={styles.container}>
-        <div style={styles.summaryField}> </div>
+        <div style={styles.summaryField}>m </div>
     </div>
   )
 }

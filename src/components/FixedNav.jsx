@@ -2,6 +2,11 @@ import React, { useEffect, useRef, useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom';
 
 function FixedNav() {
+
+  const [isUserAuth, setIsUserAuth] = useState();
+  const [isHomePage, setIsHomePage] = useState();
+  const [isCreateOrEditPage, setIsCreateOrEditPage] = useState();
+
   const styles = {
     navContainer: {
       position: "fixed",
@@ -9,7 +14,8 @@ function FixedNav() {
       width: "100%",
       height: "80px",
       borderBottom: "solid 1px",
-      backgroundColor: "white"
+      backgroundColor: "white",
+      display: isCreateOrEditPage? "none":"block"
     },
     nav: {
       width: "70vw",
@@ -19,27 +25,40 @@ function FixedNav() {
       alignItems: "center"
     }
   }
-  const [isUserAuth, setIsUserAuth] = useState();
-  const [isHomePage, setIsHomePage] = useState();
-  const [isEditPage, setIsEditPage] = useState();
 
   const location = useLocation()
   const navigate = useNavigate();
   const searchRef = useRef();
 
-  const handleSubmit = (event) => {
+  const goToSearch = (event) => {
     event.preventDefault();
     navigate(`/search?q=${searchRef.current.value}`);
+  }
+
+  const goToHome = () => {
+    navigate(`/`);
+  }
+
+  const goToLogIn = () => {
+    navigate(`/log-in`);
+  }
+
+  const goToSignUp = () => {
+    navigate(`/sign-up`);
+  }
+
+  const goToCreateSummary = () => {
+    navigate(`/new-book-summary`);
   }
 
 
   //this will handle changing state based on current route, which will in turn affect rendering of components
   useEffect(() => {
     console.log('Route changed to:', location)
-    //fetch user isAuthenticated() boolean 
-    setIsUserAuth(true);
+    //fetch user isAuthenticated() route boolean 
+    setIsUserAuth(false);
     location.pathname === "/"? setIsHomePage(true) : setIsHomePage(false);
-    location.pathname.includes("/edit/") ? setIsEditPage(true) : setIsEditPage(false);
+    location.pathname.includes("/edit/") || location.pathname.includes("/new-book-summary")? setIsCreateOrEditPage(true) : setIsCreateOrEditPage(false);
 
 
   }, [location]);
@@ -47,16 +66,16 @@ function FixedNav() {
   return (
     <div style={styles.navContainer}>
       <div style={styles.nav} >
-        <h1>ReadSum</h1>
-        <form style={{display: (isHomePage || isEditPage? "none": "block")}} onSubmit={handleSubmit}>
+        <h1 onClick={goToHome} style={{cursor:'pointer'}}>ReadSum</h1>
+        <form style={{display: (isHomePage || isCreateOrEditPage? "none": "block")}} onSubmit={goToSearch}>
           <input ref={searchRef} type="search" name="search" placeholder="Title / ISBN ..."/>
           <input type="submit" value="Search"/>
         </form>
-        <button style={{display: isEditPage? "block": "none" }}>Publish</button>
-        <button style={{display: isEditPage? "none": "block" }}>Write</button>
+        <button style={{display: isCreateOrEditPage? "block": "none" }}>Publish</button>
+        <button onClick={goToCreateSummary} style={{display: isCreateOrEditPage? "none": "block" }}>Write</button>
         <div style={{display: isUserAuth? "none": "block"}}>
-          <button>Log In</button>
-          <button>Sign Up</button>
+          <button onClick={goToLogIn}>Log In</button>
+          <button onClick={goToSignUp}>Sign Up</button>
         </div>
         <div style={{display: isUserAuth? "block": "none"}}>
           <button>Log Out</button>

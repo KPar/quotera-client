@@ -1,6 +1,6 @@
 function ErrorPage() {
   return (
-    <div>ErrorPage</div>
+    <div style={{marginTop:"100px"}}>ErrorPage</div>
   )
 }
 
