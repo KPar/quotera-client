@@ -1,20 +1,28 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import ReactMarkdown from 'react-markdown'
-import PublishNav from '../components/CreateOrEditSummary/PublishNav'
-import FixedNav from '../components/FixedNav'
+import { useLocation } from 'react-router-dom'
+import BookAdder from '../../components/CreateSummary/BookAdder'
+import PublishNav from '../../components/CreateSummary/PublishNav'
+import "../CreateSummary/CreateSummary.css"
 
 
-function CreateOrEditSummary() {
+function CreateSummary() {
   const styles = {
     container: {
       height: "90vh",
-      width: "100%",
+      width: "70vw",
+      margin: "auto",
       marginTop:"100px"
     },
     summaryField: {
       marginTop: "10vh",
-      height: "100%",
-      width: "100%"
+      height: "50vh",
+      width: "100%",
+      fontSize: "15px",
+      outline: "none",
+      border: "none",
+      overflow: "auto",
+      resize: "none"
     },
     nav: {
       position: "fixed",
@@ -35,17 +43,27 @@ function CreateOrEditSummary() {
   }
   */
 
+  const location = useLocation()
+
   const [isEdit, setIsEdit] = useState(true)
 
   const publish = () => {
-    setIsEdit(!isEdit)
   }
+
+
+  useEffect(() => {
+    location.pathname === "/new-book-summary"? setIsEdit(false) : setIsEdit(true);
+    location.pathname.includes("/edit/")? setIsEdit(true) : setIsEdit(false);
+
+
+  }, [location]);
 
   if(isEdit){
     return (
       <>
         <PublishNav/>
         <div style={styles.container}>
+          
           <h1>Joe's Summary</h1>
           <h2>of Harry Potter By JK</h2>
           <div style={styles.summaryField} contentEditable> </div>
@@ -55,10 +73,15 @@ function CreateOrEditSummary() {
   } 
 
   return (
-    <div style={styles.container}>
-        <div style={styles.summaryField}>m </div>
-    </div>
+    <>
+      
+      <PublishNav/>
+      <div style={styles.container}>
+          <BookAdder/>
+          <textarea style={styles.summaryField} placeholder="Write your summary..."/>
+      </div>
+    </>
   )
 }
 
-export default CreateOrEditSummary
+export default CreateSummary

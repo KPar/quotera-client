@@ -1,0 +1,69 @@
+/* BookAdder */
+#BookAdder_containter {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    margin: auto;        
+}
+
+/* BookAdderSearchBar */
+#BookAdderSearchBar_searchInput {
+    width: 50vw;
+    font-size: 20px;
+    outline: none;
+    border: none;
+    padding: 10px;
+    background-color: white;
+    margin: 10px auto;
+    border-bottom: solid;
+}
+
+#BookAdderSearchBar_results {
+    height:100px;
+    width: 50vw;
+    padding: 10px;
+    overflow: hidden;
+    overflow-y: auto;
+    background-color: white;
+    cursor: pointer;
+    margin: 10px auto;
+    border: solid;
+}
+
+/* BookAdderListItem */
+#BookAdderListItem:hover {
+    background-color: rgb(238, 238, 238);
+}
+
+#BookAdderListItem{
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+
+/* CreateSummary */
+#CreateSummary_container {
+    height: 90vh;
+    width: 70vw;
+    margin: auto;
+    margin-top: 100px;
+  }
+
+#CreateSummary_summaryField {
+    margin-top: 10vh;
+    height: 50vh;
+    width: 100%;
+    font-size: 15px;
+    outline: none;
+    border: none;
+    overflow: auto;
+    resize: none;
+  }
+
+#CreateSummary_nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 50px;
+    background-color: gray;
+  }

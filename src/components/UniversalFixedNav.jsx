@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom';
 
-function FixedNav() {
+function UniversalFixedNav() {
 
   const [isUserAuth, setIsUserAuth] = useState();
   const [isHomePage, setIsHomePage] = useState();
@@ -88,4 +88,4 @@ function FixedNav() {
   )
 }
 
-export default FixedNav
+export default UniversalFixedNav
