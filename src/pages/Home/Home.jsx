@@ -9,6 +9,7 @@ function Home() {
       marginTop:"100px"
     },
     contentContainer: {
+      marginTop:"200px",
       textAlign: "center"
     },
     siteName : {

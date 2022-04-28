@@ -13,12 +13,14 @@ function UniversalFixedNav() {
       position: "fixed",
       top: "0",
       width: "100%",
-      height: "80px",
-      borderBottom: "solid 1px",
+      height: "100px",
+      boxShadow: "0 2px 9px 0 rgba(0, 0, 0, 0.2)",
+      borderBottom: "solid 0.5px rgb(226, 226, 226)",
       backgroundColor: "white",
       display: isCreateOrEditPage? "none":"block"
     },
     nav: {
+      height:"100%",
       width: "70vw",
       margin: "auto",
       display: "flex",
@@ -67,7 +69,7 @@ function UniversalFixedNav() {
   return (
     <div style={styles.navContainer}>
       <div style={styles.nav} >
-        <h1 onClick={goToHome} style={{cursor:'pointer'}}>ReadSum</h1>
+        <h1 onClick={goToHome} style={{cursor:'pointer'}}>Readflect</h1>
         <div style={{display: (isHomePage || isCreateOrEditPage? "none": "block")}}>
           <SearchBar/>
         </div>

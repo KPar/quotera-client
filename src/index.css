@@ -13,6 +13,7 @@ body {
 
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@700&family=Open+Sans&display=swap');
 
+/* SearchBar */
 #SearchBarContainer {
     width:fit-content;
     margin: auto;
