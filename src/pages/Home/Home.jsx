@@ -1,5 +1,6 @@
 import {useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import SearchBar from "../../components/SearchBar";
 
 function Home() {
   const styles = {
@@ -27,11 +28,8 @@ function Home() {
   return (
     <div style={styles.container}>
       <div style={styles.contentContainer}>
-        <h1 style={styles.siteName}>ReadSum</h1>
-        <form onSubmit={handleSubmit}>
-          <input ref={searchRef} type="search" name="search" placeholder="Title / ISBN ..."/>
-          <input type="submit" value="Search"/>
-        </form>
+        <h1 style={styles.siteName}>Readflect</h1>
+        <SearchBar SearchBarOrigin={"Home"}/>
       </div>
     </div>
     

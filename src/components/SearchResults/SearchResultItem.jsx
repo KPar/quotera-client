@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom"
 
-function SummariesResultItem({summaryResult}) {
-    const {bookSummaryID, content, username} = summaryResult
+function SearchResultItem({searchResult}) {
+    const {bookSummaryID, content, username} = searchResult
 
      const styles = {
        divider: {
@@ -39,4 +39,4 @@ function SummariesResultItem({summaryResult}) {
     )
   }
   
-  export default SummariesResultItem
+  export default SearchResultItem

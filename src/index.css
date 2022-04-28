@@ -12,3 +12,41 @@ body {
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@700&family=Open+Sans&display=swap');
+
+#SearchBarContainer {
+    width:fit-content;
+    margin: auto;
+}
+
+#NavSearchBar_searchInput {
+    width: 30vw;
+    font-size: 20px;
+    outline: none;
+    border: none;
+    padding: 10px;
+    background-color: white;
+    margin: 1px auto;
+    border-bottom: solid;
+}
+
+#NavSearchBar_results {
+    position: absolute;
+    height:100px;
+    width: 30vw;
+    padding: 10px;
+    overflow: hidden;
+    overflow-y: auto;
+    background-color: white;
+    cursor: pointer;
+    margin: auto;
+    border: solid;
+}
+
+#NavSearchBarListItem:hover {
+    background-color: rgb(238, 238, 238);
+}
+
+#NavSearchBarListItem{
+    margin-bottom: 10px;
+    text-align: left;
+}

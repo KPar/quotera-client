@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom';
+import SearchBar from "../components/SearchBar"
 
 function UniversalFixedNav() {
 
@@ -67,10 +68,9 @@ function UniversalFixedNav() {
     <div style={styles.navContainer}>
       <div style={styles.nav} >
         <h1 onClick={goToHome} style={{cursor:'pointer'}}>ReadSum</h1>
-        <form style={{display: (isHomePage || isCreateOrEditPage? "none": "block")}} onSubmit={goToSearch}>
-          <input ref={searchRef} type="search" name="search" placeholder="Title / ISBN ..."/>
-          <input type="submit" value="Search"/>
-        </form>
+        <div style={{display: (isHomePage || isCreateOrEditPage? "none": "block")}}>
+          <SearchBar SearchBarOrigin={"UniversalFixedNav"}/>
+        </div>
         <button style={{display: isCreateOrEditPage? "block": "none" }}>Publish</button>
         <button onClick={goToCreateSummary} style={{display: isCreateOrEditPage? "none": "block" }}>Write</button>
         <div style={{display: isUserAuth? "none": "block"}}>

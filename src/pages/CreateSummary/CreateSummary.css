@@ -8,7 +8,7 @@
 
 /* BookAdderSearchBar */
 #BookAdderSearchBar_searchInput {
-    width: 50vw;
+    width: 30vw;
     font-size: 20px;
     outline: none;
     border: none;
@@ -20,7 +20,7 @@
 
 #BookAdderSearchBar_results {
     height:100px;
-    width: 50vw;
+    width: 30vw;
     padding: 10px;
     overflow: hidden;
     overflow-y: auto;

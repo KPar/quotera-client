@@ -1,0 +1,33 @@
+/* SearchBar */
+#HomeSearchBar_searchInput {
+    width: 30vw;
+    font-size: 20px;
+    outline: none;
+    border: none;
+    padding: 10px;
+    background-color: white;
+    margin: 10px auto;
+    border-bottom: solid;
+}
+
+#HomeSearchBar_results {
+    position: absolute;
+    height:100px;
+    width: 30vw;
+    padding: 10px;
+    overflow: hidden;
+    overflow-y: auto;
+    background-color: white;
+    cursor: pointer;
+    margin: 10px auto;
+    border: solid;
+}
+
+#HomeSearchBarListItem:hover {
+    background-color: rgb(238, 238, 238);
+}
+
+#HomeSearchBarListItem{
+    margin-bottom: 10px;
+    text-align: left;
+}

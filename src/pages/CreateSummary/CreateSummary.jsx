@@ -45,20 +45,20 @@ function CreateSummary() {
 
   const location = useLocation()
 
-  const [isEdit, setIsEdit] = useState(true)
+  const [isEditPage, setIsEditPage] = useState()
 
   const publish = () => {
   }
 
 
   useEffect(() => {
-    location.pathname === "/new-book-summary"? setIsEdit(false) : setIsEdit(true);
-    location.pathname.includes("/edit/")? setIsEdit(true) : setIsEdit(false);
+    location.pathname === "/new-book-summary"? setIsEditPage(false) : setIsEditPage(true);
+    location.pathname.includes("/edit/")? setIsEditPage(true) : setIsEditPage(false);
 
 
   }, [location]);
 
-  if(isEdit){
+  if(isEditPage){
     return (
       <>
         <PublishNav/>
