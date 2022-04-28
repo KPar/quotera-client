@@ -29,7 +29,7 @@ function Home() {
     <div style={styles.container}>
       <div style={styles.contentContainer}>
         <h1 style={styles.siteName}>Readflect</h1>
-        <SearchBar SearchBarOrigin={"Home"}/>
+        <SearchBar/>
       </div>
     </div>
     

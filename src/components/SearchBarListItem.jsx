@@ -1,22 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 
-function HomeSearchBarListItem({result, SearchBarOrigin}) {
-
-  let listItemStyleId = ""
-  switch (SearchBarOrigin) {
-    case "Home":
-      listItemStyleId = "HomeSearchBarListItem"
-      console.log("why")
-
-      break;
-    case "UniversalFixedNav":
-      listItemStyleId = "NavSearchBarListItem"
-      break;
-    default:
-      listItemStyleId = "HomeSearchBar_results"
-      break;
-  }
+function HomeSearchBarListItem({result}) {
 
   const navigate = useNavigate();
   const onBookSelection = () => {
@@ -24,7 +9,7 @@ function HomeSearchBarListItem({result, SearchBarOrigin}) {
     }
 
   return (
-    <div id={listItemStyleId} onClick={onBookSelection}>
+    <div id="SearchBarListItem" onClick={onBookSelection}>
         <div>{result.title}</div>
         <div>{result.author}</div>
         <div>{result.ISBN}</div>

@@ -1,27 +1,14 @@
 import React from 'react'
 import HomeSearchBarListItem from './SearchBarListItem'
 
-function HomeSearchBarResults({results, SearchBarOrigin}) {
-    let resultsStyleId = ""
-    switch (SearchBarOrigin) {
-      case "Home":
-        resultsStyleId = "HomeSearchBar_results"
-        console.log("why")
-        break;
-      case "UniversalFixedNav":
-        resultsStyleId = "NavSearchBar_results"
-        break;
-      default:
-        resultsStyleId = ""
-        break;
-    }
+function HomeSearchBarResults({results}) {
 
     if(!(results === undefined || results.length===0)){
         return (
-            <div id = {resultsStyleId}>
+            <div id = "SearchBar_results">
                 {results.map(result => {
                     return (
-                        <HomeSearchBarListItem key = {result.bookID} result = {result} SearchBarOrigin = {SearchBarOrigin}/>
+                        <HomeSearchBarListItem key = {result.bookID} result = {result}/>
                     )
                 })}
             </div>

@@ -18,18 +18,20 @@ body {
     margin: auto;
 }
 
-#NavSearchBar_searchInput {
+#SearchBar_searchInput {
     width: 30vw;
-    font-size: 20px;
+    font-size: 15px;
     outline: none;
     border: none;
-    padding: 10px;
+    padding: 15px 25px 15px 25px;
+    box-shadow: 0 2px 9px 0 rgba(0, 0, 0, 0.2);
     background-color: white;
     margin: 1px auto;
-    border-bottom: solid;
+    border: 0.7px solid rgb(226, 226, 226);
+    border-radius: 25px;
 }
 
-#NavSearchBar_results {
+#SearchBar_results {
     position: absolute;
     height:100px;
     width: 30vw;
@@ -42,11 +44,11 @@ body {
     border: solid;
 }
 
-#NavSearchBarListItem:hover {
+#SearchBarListItem:hover {
     background-color: rgb(238, 238, 238);
 }
 
-#NavSearchBarListItem{
+#SearchBarListItem{
     margin-bottom: 10px;
     text-align: left;
 }

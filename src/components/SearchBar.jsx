@@ -2,22 +2,7 @@ import React, { useRef, useState } from 'react'
 import SearchBarResults from './SearchBarResults';
 import "../pages/Home/Home.css"
 
-function HomeSearchBar({SearchBarOrigin}) {
-
-    let inputStyleId = ""
-    switch (SearchBarOrigin) {
-      case "Home":
-        inputStyleId = "HomeSearchBar_searchInput"
-        console.log("why")
-        break;
-      case "UniversalFixedNav":
-        inputStyleId = "NavSearchBar_searchInput"
-        break;
-      default:
-        console.log("j "+SearchBarOrigin)
-        inputStyleId = "HomeSearchBar_searchInput"
-        break;
-    }
+function HomeSearchBar() {
 
     const inputRef = useRef();
 
@@ -65,8 +50,8 @@ function HomeSearchBar({SearchBarOrigin}) {
 
   return (
     <form id="SearchBarContainer" onSubmit={goToSearch}>
-        <input ref= {inputRef} id = {inputStyleId} type = "text" onChange={fetchResults} placeholder="Title / ISBN..."/>
-        <SearchBarResults results={results} SearchBarOrigin = {SearchBarOrigin}/>
+        <input ref= {inputRef} id = "SearchBar_searchInput" type = "text" onChange={fetchResults} placeholder="Title / ISBN..."/>
+        <SearchBarResults results={results}/>
     </form>
   )
 }

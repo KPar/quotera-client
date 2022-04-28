@@ -69,7 +69,7 @@ function UniversalFixedNav() {
       <div style={styles.nav} >
         <h1 onClick={goToHome} style={{cursor:'pointer'}}>ReadSum</h1>
         <div style={{display: (isHomePage || isCreateOrEditPage? "none": "block")}}>
-          <SearchBar SearchBarOrigin={"UniversalFixedNav"}/>
+          <SearchBar/>
         </div>
         <button style={{display: isCreateOrEditPage? "block": "none" }}>Publish</button>
         <button onClick={goToCreateSummary} style={{display: isCreateOrEditPage? "none": "block" }}>Write</button>
