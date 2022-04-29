@@ -50,8 +50,8 @@ function UniversalFixedNav() {
     navigate(`/sign-up`);
   }
 
-  const goToCreateSummary = () => {
-    navigate(`/new-book-summary`);
+  const goToCreateReflection = () => {
+    navigate(`/new-reflection`);
   }
 
 
@@ -69,12 +69,12 @@ function UniversalFixedNav() {
   return (
     <div style={styles.navContainer}>
       <div style={styles.nav} >
-        <h1 onClick={goToHome} style={{cursor:'pointer'}}>Readflect</h1>
+        <h1 onClick={goToHome} style={{cursor:'pointer'}}>Quotera</h1>
         <div style={{display: (isHomePage || isCreateOrEditPage? "none": "block")}}>
           <SearchBar/>
         </div>
         <button style={{display: isCreateOrEditPage? "block": "none" }}>Publish</button>
-        <button onClick={goToCreateSummary} style={{display: isCreateOrEditPage? "none": "block" }}>Write</button>
+        <button onClick={goToCreateReflection} style={{display: isCreateOrEditPage? "none": "block" }}>Write</button>
         <div style={{display: isUserAuth? "none": "block"}}>
           <button onClick={goToLogIn}>Log In</button>
           <button onClick={goToSignUp}>Sign Up</button>

@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react'
 import ReactMarkdown from 'react-markdown'
 import { useLocation } from 'react-router-dom'
-import BookAdder from '../../components/CreateSummary/BookAdder'
-import PublishNav from '../../components/CreateSummary/PublishNav'
-import "../CreateSummary/CreateSummary.css"
+import BookAdder from '../../components/CreateReflection/BookAdder'
+import PublishNav from '../../components/CreateReflection/PublishNav'
+import "../CreateReflection/CreateReflection.css"
 
 
-function CreateSummary() {
+function CreateReflection() {
   const styles = {
     container: {
       height: "90vh",
@@ -84,4 +84,4 @@ function CreateSummary() {
   )
 }
 
-export default CreateSummary
+export default CreateReflection

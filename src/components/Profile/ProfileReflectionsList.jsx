@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import ProfileSummaryItem from './ProfileSummaryItem';
+import ProfileReflectionListItem from './ProfileReflectionListItem';
 
-function ProfileSummariesList() {
+function ProfileReflectionsList() {
     const [summariesList, setSummariesList] = useState([]);
 
     useEffect(() => {
@@ -27,9 +27,9 @@ function ProfileSummariesList() {
     
    return (
     summariesList.map((summaryItem) => {
-         return <ProfileSummaryItem key = {summaryItem.summaryID} summaryItem={summaryItem}/>        
+         return <ProfileReflectionListItem key = {summaryItem.summaryID} summaryItem={summaryItem}/>        
        }) 
    )
 }
 
-export default ProfileSummariesList
+export default ProfileReflectionsList

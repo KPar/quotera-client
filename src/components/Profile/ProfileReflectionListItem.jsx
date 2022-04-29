@@ -1,7 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
 
-function ProfileSummaryItem({summaryItem}) {
+function ProfileReflectionListItem({summaryItem}) {
     const {summaryID, bookTitle, author} = summaryItem
 
     const styles = {
@@ -28,11 +28,11 @@ function ProfileSummaryItem({summaryItem}) {
        },
      }
      const navigate = useNavigate();
-     const goToBookSummary = () => {
-       navigate(`/book-summary/${summaryID}`);
+     const goToReflection = () => {
+       navigate(`/reflection/${summaryID}`);
      }
    return (
-     <div onClick={goToBookSummary} style={{cursor:"pointer"}}>
+     <div onClick={goToReflection} style={{cursor:"pointer"}}>
        <p style={styles.title}>{bookTitle}'s</p>
        <p style={styles.contentStyle}>By {author}</p>
        <div style={styles.divider}></div>
@@ -40,4 +40,4 @@ function ProfileSummaryItem({summaryItem}) {
    )
 }
 
-export default ProfileSummaryItem
+export default ProfileReflectionListItem

@@ -50,7 +50,7 @@ function HomeSearchBar() {
 
   return (
     <form id="SearchBarContainer" onSubmit={goToSearch}>
-        <input ref= {inputRef} id = "SearchBar_searchInput" type = "text" onChange={fetchResults} placeholder="Title / ISBN..."/>
+        <input ref= {inputRef} id = "SearchBar_searchInput" type = "text" onChange={fetchResults} placeholder="Search by Book Title or ISBN"/>
         <SearchBarResults results={results}/>
     </form>
   )

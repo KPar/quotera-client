@@ -29,7 +29,7 @@ function Home() {
   return (
     <div style={styles.container}>
       <div style={styles.contentContainer}>
-        <h1 style={styles.siteName}>Readflect</h1>
+        <h1 style={styles.siteName}>Quotera</h1>
         <SearchBar/>
       </div>
     </div>

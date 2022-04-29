@@ -28,7 +28,7 @@ function SearchResultItem({searchResult}) {
       }
       const navigate = useNavigate();
       const goToBookSummary = () => {
-        navigate(`/book-summary/${bookSummaryID}`);
+        navigate(`/reflection/${bookSummaryID}`);
       }
     return (
       <div onClick={goToBookSummary} style={{cursor:"pointer"}}>
