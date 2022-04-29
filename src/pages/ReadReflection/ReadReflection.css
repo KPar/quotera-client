@@ -1,10 +1,18 @@
-#quote {
+/* ReadReflection */
+#ReadReflection_container {
+    margin: auto;
+    margin-top:150px;
+    width: 60%;
+    margin-bottom: 70px;
+}
+
+#ReadReflection_quote {
     font-size: 30px;
     font-family:  "Nanum Myeongjo, serif";
     font-style: italic;
 }
 
-#bookContainer {
+#ReadReflection_bookContainer {
     display: flex;
     box-shadow: 0 2px 9px 0 rgba(0, 0, 0, 0.2);
     width: fit-content;
@@ -13,3 +21,11 @@
     column-gap: 15px;
     margin-bottom:30px;
 }
+
+#ReadReflection_reflection {
+    margin: auto;
+    line-height: 1.7em;
+    letter-spacing: 0.2px;
+    font-size: 18px;
+    font-family: "Nanum Myeongjo, serif";
+  }

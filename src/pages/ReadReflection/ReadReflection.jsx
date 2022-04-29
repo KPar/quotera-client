@@ -3,20 +3,6 @@ import "../ReadReflection/ReadReflection.css"
 
 function ReadReflection() {
   const styles = {
-    reflection: {
-      margin: "auto",
-      lineHeight: "1.7em",
-      letterSpacing: "0.2px",
-      fontSize: "18px",
-      fontFamily: "Nanum Myeongjo, serif",
-      
-    },
-    container: {
-      margin: "auto",
-      marginTop:"150px",
-      width: "60%",
-      marginBottom: "70px"
-    },
     quoteContainer: {
       display: "flex",
       margin: "auto",
@@ -43,11 +29,11 @@ function ReadReflection() {
  },[]);
 
   return (
-    <div style={styles.container}>      
+    <div id="ReadReflection_container">      
       <h2>Username</h2>
       <p>Apr 12, 2022</p>
 
-      <div id="bookContainer">
+      <div id="ReadReflection_bookContainer">
         <img alt="bookCover"/>
         <div>
           <p>{data.title}</p>
@@ -56,9 +42,9 @@ function ReadReflection() {
         </div>
       </div>
       <div style={styles.quoteContainer}> 
-        <p id="quote">{data.quote}</p>
+        <p id="ReadReflection_quote">{data.quote}</p>
       </div>
-      <p style={styles.reflection}>{data.reflection}</p>
+      <p id="ReadReflection_reflection">{data.reflection}</p>
     </div>
   )
 }

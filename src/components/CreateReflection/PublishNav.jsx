@@ -1,5 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
+import "../../pages/CreateReflection/CreateReflection.css"
 
 function PublishNav() {
     const styles = {
@@ -27,13 +28,11 @@ function PublishNav() {
       }
 
   return (
-    <div style={styles.navContainer}>
-      <div style={styles.nav} >
-        <h1 onClick={goToHome} style={{cursor:'pointer'}}>ReadSum</h1>
+    <div id="PublishNav_container">
+      <div id="PublishNav_nav" >
+        <h1 onClick={goToHome} style={{cursor:'pointer'}}>Quotera</h1>
         <button>Publish</button>
 
-        
-        
       </div>
     </div>
   )

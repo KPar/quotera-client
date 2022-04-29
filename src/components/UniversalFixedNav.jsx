@@ -59,9 +59,9 @@ function UniversalFixedNav() {
   useEffect(() => {
     console.log('Route changed to:', location)
     //fetch user isAuthenticated() route boolean 
-    setIsUserAuth(false);
+    setIsUserAuth(true);
     location.pathname === "/"? setIsHomePage(true) : setIsHomePage(false);
-    location.pathname.includes("/edit/") || location.pathname.includes("/new-book-summary")? setIsCreateOrEditPage(true) : setIsCreateOrEditPage(false);
+    location.pathname.includes("/edit/") || location.pathname.includes("/new-reflection")? setIsCreateOrEditPage(true) : setIsCreateOrEditPage(false);
 
 
   }, [location]);
@@ -70,12 +70,11 @@ function UniversalFixedNav() {
     <div style={styles.navContainer}>
       <div style={styles.nav} >
         <h1 onClick={goToHome} style={{cursor:'pointer'}}>Quotera</h1>
-        <div style={{display: (isHomePage || isCreateOrEditPage? "none": "block")}}>
+        <div style={{display: (isHomePage? "none": "block")}}>
           <SearchBar/>
         </div>
-        <button style={{display: isCreateOrEditPage? "block": "none" }}>Publish</button>
-        <button onClick={goToCreateReflection} style={{display: isCreateOrEditPage? "none": "block" }}>Write</button>
-        <div style={{display: isUserAuth? "none": "block"}}>
+        <button onClick={goToCreateReflection}>Write</button>
+        <div style={{display: (isUserAuth? "none": "block")}}>
           <button onClick={goToLogIn}>Log In</button>
           <button onClick={goToSignUp}>Sign Up</button>
         </div>

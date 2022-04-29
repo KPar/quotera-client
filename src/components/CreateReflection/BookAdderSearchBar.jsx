@@ -50,7 +50,7 @@ function BookAdderSearchBar() {
      if(!isBookSelected){
          return (
             <div>
-                <input ref={inputRef} id ="BookAdderSearchBar_searchInput" type = "text" onChange={fetchResults} placeholder="Title / ISBN..."/>
+                <input ref={inputRef} id ="BookAdderSearchBar_searchInput" type = "text" onChange={fetchResults} placeholder="Choose Book (Title / ISBN)"/>
                 <BookAdderSearchResults results={results}/>
             </div>
         )

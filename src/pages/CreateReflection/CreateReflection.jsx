@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import ReactMarkdown from 'react-markdown'
 import { useLocation } from 'react-router-dom'
 import BookAdder from '../../components/CreateReflection/BookAdder'
@@ -7,31 +7,7 @@ import "../CreateReflection/CreateReflection.css"
 
 
 function CreateReflection() {
-  const styles = {
-    container: {
-      height: "90vh",
-      width: "70vw",
-      margin: "auto",
-      marginTop:"100px"
-    },
-    summaryField: {
-      marginTop: "10vh",
-      height: "50vh",
-      width: "100%",
-      fontSize: "15px",
-      outline: "none",
-      border: "none",
-      overflow: "auto",
-      resize: "none"
-    },
-    nav: {
-      position: "fixed",
-      top: "0",
-      width: "100%",
-      height: "50px",
-      backgroundColor: "gray"
-    }
-  }
+  
   /*
   first check if (its edit url) {
     grab the param summary id, then do a fetch 
@@ -46,27 +22,39 @@ function CreateReflection() {
   const location = useLocation()
 
   const [isEditPage, setIsEditPage] = useState()
+  const [selectedBook, setSelectedBook] = useState()
 
   const publish = () => {
   }
 
+  const tx = document.getElementsByTagName("textarea");
+  for (let i = 0; i < tx.length; i++) {
+    tx[i].setAttribute("style", "height:" + (tx[i].scrollHeight) + "px;overflow-y:hidden;");
+    tx[i].addEventListener("input", OnInput, false);
+  }
+  
+  function OnInput() {
+    this.style.height = "auto";
+    this.style.height = (this.scrollHeight) + "px";
+  }
 
   useEffect(() => {
-    location.pathname === "/new-book-summary"? setIsEditPage(false) : setIsEditPage(true);
+    location.pathname === "/new-reflection"? setIsEditPage(false) : setIsEditPage(true);
     location.pathname.includes("/edit/")? setIsEditPage(true) : setIsEditPage(false);
 
 
   }, [location]);
 
+  //TODO if its an edit page, we must send the book data to BookAdder and change the isBookSelected state within it
+  //if book is changed, we must change the book state here
   if(isEditPage){
     return (
       <>
-        <PublishNav/>
-        <div style={styles.container}>
-          
-          <h1>Joe's Summary</h1>
-          <h2>of Harry Potter By JK</h2>
-          <div style={styles.summaryField} contentEditable> </div>
+      <PublishNav/>
+        <div id="CreateReflection_container">
+          <BookAdder/>
+          <textarea id="CreateReflection_quoteField" placeholder="Quote..." contentEditable/>
+          <textarea id="CreateReflection_reflectionField" placeholder="Reflection..." contentEditable/>
         </div>
       </>
     ) 
@@ -74,11 +62,11 @@ function CreateReflection() {
 
   return (
     <>
-      
       <PublishNav/>
-      <div style={styles.container}>
+      <div id="CreateReflection_container">
           <BookAdder/>
-          <textarea style={styles.summaryField} placeholder="Write your summary..."/>
+          <textarea id="CreateReflection_quoteField" placeholder="Quote..." contentEditable/>
+          <textarea id="CreateReflection_reflectionField" placeholder="Reflection..." contentEditable/> 
       </div>
     </>
   )
