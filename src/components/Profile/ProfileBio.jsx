@@ -1,13 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
+import { ProfileContext } from '../../pages/Profile/Profile';
+import "../../pages/Profile/Profile.css"
 
 function ProfileBio() {
-  const styles = {
-      container: {
-          height: "fit-content",
-          width: "100%",
-          borderBottom:"solid 0.5px"
-      }
-  }
+
+  const {isPersonalProfile} = useContext(ProfileContext);
 
   const [bioData, setBioData] = useState({});
 
@@ -22,7 +19,8 @@ function ProfileBio() {
    },[]);
 
   return (
-    <div style={styles.container}>
+    <div id="ProfileBio_container">
+        <button style={{display: isPersonalProfile? "block":"none"}}>Edit</button>
         <h1>{bioData.displayName}</h1>
         <h2>{bioData.username}</h2>
         <p>{bioData.bioInfo}</p>

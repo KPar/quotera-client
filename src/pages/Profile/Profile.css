@@ -1,0 +1,31 @@
+/* ProfileBio */
+#ProfileBio_container {
+    height: fit-content;
+    width: 100%;
+    border-bottom: solid 0.5px;
+}
+
+/* ProfileReflectionListItem */
+#ProfileReflectionListItem_divider {
+    height: 0.5px;
+    background-color: #c7c7c7;
+}
+#ProfileReflectionListItem_title {
+    font-size:20px; 
+    font-family:  "Nanum Myeongjo, serif";
+    margin-bottom: -10;
+    font-weight: bold;
+}
+#ProfileReflectionListItem_contentStyle {
+    font-size: 17px;
+    font-family:  "Nanum Myeongjo, serif";
+    margin-bottom: 10;
+    overflow: hidden; 
+    text-overflow: ellipsis;
+    width:"50%";
+    display: "-webkit-box"; 
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: "vertical";
+    line-height:"16px";
+    max-height:"32px";
+}

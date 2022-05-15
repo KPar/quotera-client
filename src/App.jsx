@@ -1,10 +1,10 @@
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import ErrorPage from "./pages/ErrorPage";
 import Home from "./pages/Home/Home";
-import Profile from "./pages/Profile";
-import LogIn from "./pages/LogIn";
-import SignUp from "./pages/SignUp";
-import Settings from "./pages/Settings";
+import Profile from "./pages/Profile/Profile";
+import LogIn from "./pages/LogIn/LogIn";
+import SignUp from "./pages/SignUp/SignUp";
+import Settings from "./pages/Settings/Settings";
 import ReadReflection from "./pages/ReadReflection/ReadReflection";
 import SearchResults from "./pages/SearchResults";
 import UniversalFixedNav from "./components/UniversalFixedNav";

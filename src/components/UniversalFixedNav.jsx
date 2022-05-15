@@ -50,16 +50,41 @@ function UniversalFixedNav() {
     navigate(`/sign-up`);
   }
 
+  const goToSettings = () => {
+    navigate(`/settings`);
+  }
+
   const goToCreateReflection = () => {
     navigate(`/new-reflection`);
   }
 
+  const logOut = async () => {
+    try{
+      const requestOptions = {
+        method: 'DELETE',
+        credentials: 'include'
+      };
+      await fetch('http://localhost:5500/logout', requestOptions);
+      navigate(`/`);
+    } catch (err){
+        console.log(err);
+    }
+  }
 
+  
   //this will handle changing state based on current route, which will in turn affect rendering of components
   useEffect(() => {
+    async function isAuthenticated(){
+      try{
+          let res = await fetch('http://localhost:5500/checkLoggedIn', {mode:'cors', credentials: 'include'});
+          let dataRes = await res.json();
+          setIsUserAuth(dataRes.isAuthenticated)
+      } catch (err){
+          console.log(err);
+      }
+    }
+    isAuthenticated();
     console.log('Route changed to:', location)
-    //fetch user isAuthenticated() route boolean 
-    setIsUserAuth(true);
     location.pathname === "/"? setIsHomePage(true) : setIsHomePage(false);
     location.pathname.includes("/edit/") || location.pathname.includes("/new-reflection")? setIsCreateOrEditPage(true) : setIsCreateOrEditPage(false);
 
@@ -79,8 +104,8 @@ function UniversalFixedNav() {
           <button onClick={goToSignUp}>Sign Up</button>
         </div>
         <div style={{display: isUserAuth? "block": "none"}}>
-          <button>Log Out</button>
-          <button>Settings</button>
+          <button onClick={logOut}>Log Out</button>
+          <button onClick={goToSettings}>Settings</button>
         </div>
         
         

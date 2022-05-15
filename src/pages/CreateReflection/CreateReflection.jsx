@@ -10,8 +10,8 @@ function CreateReflection() {
   
   /*
   first check if (its edit url) {
-    grab the param summary id, then do a fetch 
-    this fetch will make sure user is authorized, 
+    grab the param reflection id, then do a fetch 
+    this fetch will make sure user is authorized to edit the reflection, 
     if they're not we will redirect them to the readBookSummary of this summary
     if all is well, paste the data on the input field
   } else {
