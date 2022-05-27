@@ -8,41 +8,24 @@ function HomeSearchBar() {
 
     const [results, setResults] = useState();
 
-    const fetchResults = (e) => {
-        // fetch with inputRef.current.value and setResults()
-        setResults([
-            {
-                bookID: 1,
-                ISBN: "1l-jjq",
-                title: "Harry Potter",
-                author: "jo"
-              },
-              {
-                bookID: 2,
-                ISBN: "1l-jjq",
-                title: "Death Note",
-                author: "joe"
-              },
-              {
-                bookID: 3,
-                ISBN: "1l-jjq",
-                title: "Naruto",
-                author: "joe b"
-              },
-              {
-                bookID: 4,
-                ISBN: "1l-jjq",
-                title: "Death Note",
-                author: "joe"
-              },
-              {
-                bookID: 5,
-                ISBN: "1l-jjq",
-                title: "Naruto",
-                author: "joe b"
-              }
-        ])
-     }
+    const fetchResults = async (e) => {
+      if(inputRef.current.value.trim().length===0){
+        setResults([]);
+        return;
+      }
+      try{
+          let res = await fetch(`http://localhost:5500/books/q?data=${inputRef.current.value.trim()}`);
+          if(res.status===404){
+            setResults([])
+          }else{
+            let dataRes = await res.json();
+            setResults(dataRes)
+          }
+          
+      } catch (err){
+          console.log("k "+err);
+      }
+    }
    
      const goToSearch = (event) => {
        event.preventDefault();

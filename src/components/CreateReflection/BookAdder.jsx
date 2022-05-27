@@ -1,23 +1,49 @@
-import React, { useRef, useState } from 'react'
-import BookAdderListItem from './BookAdderListItem';
+import React, { useEffect, useRef, useState } from 'react'
 import "../../pages/CreateReflection/CreateReflection.css"
 import { createContext, useContext } from 'react';
 import BookAdderSearchBar from './BookAdderSearchBar';
 import BookAdderSelection from './BookAdderSelection';
+import {createReflectionContext} from '../../pages/CreateReflection/CreateReflection'
+import { useLocation } from 'react-router-dom';
 
 export const BookAdderContext = createContext();
 
 function BookAdder() {
-
-    const [selection, setSelection] = useState();
-
+    const location = useLocation()
+    const {selectedBookID} = useContext(createReflectionContext)
+    const [bookSelectionData, setBookSelectionData] = useState({});
     const [isBookSelected,setIsBookSelected] = useState(false);
+ 
 
+
+    useEffect(() => {
+      console.log("book id: "+selectedBookID)    
+      const setBook = async () => {
+        try {
+          let res = await fetch(`http://localhost:5500/books/id/${selectedBookID}`);
+            if(res.status===404){
+              setBookSelectionData({})
+            }else{
+              let dataRes = await res.json();   
+              console.log("datares: "+dataRes.title)
+              setBookSelectionData(dataRes);
+            }
+        } catch (error) {
+          console.log(error);
+        }
+     }
+
+      if(location.pathname.includes("/edit/")){
+        setIsBookSelected(true);
+        setBook();
+      }
+
+    },[location.pathname, selectedBookID])
     
 
   return (
-    <div id="BookAdder_containter">
-        <BookAdderContext.Provider value = {{isBookSelected, setIsBookSelected, selection, setSelection}}>
+  <div id="BookAdder_containter">
+       <BookAdderContext.Provider value = {{isBookSelected, setIsBookSelected, bookSelectionData, setBookSelectionData}}>
             <BookAdderSearchBar/>
             <BookAdderSelection/>
         </BookAdderContext.Provider>

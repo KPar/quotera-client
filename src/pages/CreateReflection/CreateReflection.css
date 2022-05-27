@@ -45,6 +45,25 @@
     text-align: left;
 }
 
+/* BookAdderSelection */
+#BookAdderSelection_bookContainer {
+  display: flex;
+  box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.2);
+  width: fit-content;
+  border-radius: 10px;
+  padding:10px;
+  column-gap: 15px;
+  margin-bottom:30px;
+}
+#BookAdderSelection_bookImageContainer{
+  height: fit-content;
+  width: 80px;
+}
+
+#BookAdderSelection_bookImage {
+  width: 80px;
+  height: auto;
+}
 
 /* CreateReflection */
 #CreateReflection_container {

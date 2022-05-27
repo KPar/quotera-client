@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom';
 import "../ReadReflection/ReadReflection.css"
 
 function ReadReflection() {
@@ -12,35 +13,81 @@ function ReadReflection() {
       paddingLeft: "20px"
     }
   }
-  const [data, setdata] = useState([]);
+  const [data, setData] = useState([]);
+  const [bookData, setBookData] = useState([]);
+  const [username, setUsername] = useState([]);
+
+  const {reflectionID} = useParams();  
+  const getBook = async (bookID) => {
+    //console.log(bookID)
+    try{
+      let res = await fetch(`http://localhost:5500/books/id/${bookID}`);
+      if(res.status===404){
+        setBookData({})
+      }else{
+        let dataRes = await res.json();   
+        setBookData(dataRes);
+      }
+      
+    } catch (err){
+        console.log(err);
+    }
+}
+const getUsername = async (user_id) => {
+  try{
+    let res = await fetch(`http://localhost:5500/users/${user_id}/username`);
+    if(res.status===404){
+      setUsername("")
+    }else{
+      let dataRes = await res.json();              
+      setUsername(dataRes.username);
+    }
+    
+  } catch (err){
+      console.log(err);
+  }
+}
+  const getReflection = async () => {
+        try{
+          let res = await fetch(`http://localhost:5500/reflections/${reflectionID}`);
+          if(res.status===404){
+            setData({})
+          }else{
+            let dataRes = await res.json();   
+            setData(dataRes);
+            getUsername(dataRes.user_id);
+            getBook(dataRes.book_id)
+          }
+          
+        } catch (err){
+            console.log(err);
+        }
+  }
+
+
 
   useEffect(() => {
     //fetch data and assign to state
-    setdata(
-        {
-          bookID: 1,
-          title: "Harry Potter",
-          author: "Jo Smith",
-          ISBN: "23664241",
-          quote: "Nulla fermentum sed velit vitae condima fermentum sed velit vtae condimentum. Nulla fermentum sed velit vtae condimentum. Nulla fermentum sed velit vitae condimentum.",
-          reflection: "Cras ut pretium ligula. Nulla fermentum sed velit vitae condimentum. Fusce aliquam mauris a facilisis pulvinar. Mauris tortor ligula, semper quis commodo quis, imperdiet et erat. Donec suscipit bibendum mattis. Duis euismod imperdiet neque eget porttitor. Suspendisse luctus sapien at tristique molestie. Maecenas eu quam pulvinar, rhoncus nulla quis, mattis arcu. Nulla in ullamcorper mauris. Cras molestie nec eros nec sodales. Nam pretium elit ac porttitor dictum. Etiam tincidunt vulputate tellus. Suspendisse nunc turpis, elementum sit amet accumsan ac, facilisis a ex. Fusce mollis quam et consequat tristique. Quisque porttitor, felis quis interdum aliquet, odio diam mattis nunc, in pulvinar purus lacus quis ante. Etiam posuere sodales tempusNunc eu posuere nisl. Morbi nulla felis, rhoncus in ante vitae, bibendum auctor ipsum. Praesent imperdiet accumsan urna ac elementum. Mauris elit ex, consectetur non nisi nec, euismod facilisis tellus. Nulla tempor bibendum accumsan. Aliquam tempor aliquam enim, id varius dui. Cras a neque id risus euismod mattis. Phasellus ex sapien, euismod et sodales in, egestas vel nibh. Ut a nisi libero. In eu orci molestie, malesuada leo a, interdum magna. Nullam felis dolor, tristique non elit non, faucibus dictum justo. Aliquam quis dui sagittis, finibus eros non, pellentesque tellus. Duis ultricies convallis odio facilisis viverra. Cras imperdiet eros id felis molestie ultrices. Nam finibus, ligula nec ornare convallis, odio justo pellentesque odio, non sollicitudin eros nulla et erat. Fusce a leo at ante ultricies iaculis vitae sit amet nisl."
-        }
-       )
+    console.log(reflectionID)
+    getReflection()
  },[]);
 
   return (
     <div id="ReadReflection_container">      
-      <h2>Username</h2>
-      <p>Apr 12, 2022</p>
+      
 
       <div id="ReadReflection_bookContainer">
-        <img alt="bookCover"/>
+        <div id="ReadReflection_bookImageContainer">
+          <img id="ReadReflection_bookImage" alt="bookCover" src={`https://covers.openlibrary.org/b/isbn/${bookData.isbn}-M.jpg`}/>
+        </div>
         <div>
-          <p>{data.title}</p>
-          <p>By {data.author}</p>
-          <p>ISBN: {data.ISBN}</p>
+          <p>{bookData.title}</p>
+          <p>By {bookData.author}</p>
+          <p>ISBN: {bookData.isbn}</p>
         </div>
       </div>
+      <h2>{username}</h2>
+      <p>{data.date_created}</p>
       <div style={styles.quoteContainer}> 
         <p id="ReadReflection_quote">{data.quote}</p>
       </div>

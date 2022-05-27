@@ -8,7 +8,7 @@ function HomeSearchBarResults({results}) {
             <div id = "SearchBar_results">
                 {results.map(result => {
                     return (
-                        <HomeSearchBarListItem key = {result.bookID} result = {result}/>
+                        <HomeSearchBarListItem key = {result.book_id} result = {result}/>
                     )
                 })}
             </div>

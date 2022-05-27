@@ -1,7 +1,9 @@
-import React, { useContext, useRef, useState } from 'react'
+import React, { createContext, useContext, useRef, useState } from 'react'
 import "../../pages/CreateReflection/CreateReflection.css"
 import {BookAdderContext} from "./BookAdder"
 import BookAdderSearchResults from './BookAdderSearchResults';
+
+export const BookAdderSearchBarContext = createContext();
 
 
 function BookAdderSearchBar() {
@@ -11,48 +13,31 @@ function BookAdderSearchBar() {
 
     const [results, setResults] = useState();
 
-    const fetchResults = (e) => {
-        // fetch with inputRef.current.value and setResults()
-        setResults([
-            {
-                bookID: 1,
-                ISBN: "1l-jjq",
-                title: "Harry Potter",
-                author: "jo"
-              },
-              {
-                bookID: 2,
-                ISBN: "1l-jjq",
-                title: "Death Note",
-                author: "joe"
-              },
-              {
-                bookID: 3,
-                ISBN: "1l-jjq",
-                title: "Naruto",
-                author: "joe b"
-              },
-              {
-                bookID: 4,
-                ISBN: "1l-jjq",
-                title: "Death Note",
-                author: "joe"
-              },
-              {
-                bookID: 5,
-                ISBN: "1l-jjq",
-                title: "Naruto",
-                author: "joe b"
-              }
-        ])
-     }
+    const fetchResults = async (e) => {
+      if(inputRef.current.value.trim().length===0){
+        setResults([]);
+        return;
+      }
+      try{
+          let res = await fetch(`http://localhost:5500/books/q?data=${inputRef.current.value.trim()}`);
+          if(res.status===404){
+            setResults([])
+          }else{
+            let dataRes = await res.json();
+            setResults(dataRes)
+          }
+          
+      } catch (err){
+          console.log("k "+err);
+      }
+  }
 
      if(!isBookSelected){
          return (
-            <div>
+            <BookAdderSearchBarContext.Provider value={{setResults}}>
                 <input ref={inputRef} id ="BookAdderSearchBar_searchInput" type = "text" onChange={fetchResults} placeholder="Choose Book (Title / ISBN)"/>
                 <BookAdderSearchResults results={results}/>
-            </div>
+            </BookAdderSearchBarContext.Provider>
         )
      }
   

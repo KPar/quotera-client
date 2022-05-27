@@ -7,6 +7,7 @@ function UniversalFixedNav() {
   const [isUserAuth, setIsUserAuth] = useState();
   const [isHomePage, setIsHomePage] = useState();
   const [isCreateOrEditPage, setIsCreateOrEditPage] = useState();
+  const [userID, setUserID] = useState();
 
   const styles = {
     navContainer: {
@@ -54,6 +55,10 @@ function UniversalFixedNav() {
     navigate(`/settings`);
   }
 
+  const goToProfile = () => {
+    navigate(`/users/${userID}`);
+  }
+
   const goToCreateReflection = () => {
     navigate(`/new-reflection`);
   }
@@ -79,6 +84,7 @@ function UniversalFixedNav() {
           let res = await fetch('http://localhost:5500/checkLoggedIn', {mode:'cors', credentials: 'include'});
           let dataRes = await res.json();
           setIsUserAuth(dataRes.isAuthenticated)
+          setUserID(dataRes.userID);
       } catch (err){
           console.log(err);
       }
@@ -105,7 +111,7 @@ function UniversalFixedNav() {
         </div>
         <div style={{display: isUserAuth? "block": "none"}}>
           <button onClick={logOut}>Log Out</button>
-          <button onClick={goToSettings}>Settings</button>
+          <button onClick={goToProfile}>Profile</button>
         </div>
         
         
