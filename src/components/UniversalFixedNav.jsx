@@ -100,18 +100,18 @@ function UniversalFixedNav() {
   return (
     <div style={styles.navContainer}>
       <div style={styles.nav} >
-        <h1 onClick={goToHome} style={{cursor:'pointer'}}>Quotera</h1>
+        <h1 id="UniversalFixedNav_logo" onClick={goToHome}>Quotera</h1>
         <div style={{display: (isHomePage? "none": "block")}}>
           <SearchBar/>
         </div>
-        <button onClick={goToCreateReflection}>Write</button>
+        <button id='UniversalFixedNav_reflectButton' onClick={goToCreateReflection}>Reflect</button>
         <div style={{display: (isUserAuth? "none": "block")}}>
-          <button onClick={goToLogIn}>Log In</button>
-          <button onClick={goToSignUp}>Sign Up</button>
+          <button id='UniversalFixedNav_button' onClick={goToLogIn}>Log In</button>
+          <button id='UniversalFixedNav_button' onClick={goToSignUp}>Sign Up</button>
         </div>
         <div style={{display: isUserAuth? "block": "none"}}>
-          <button onClick={logOut}>Log Out</button>
-          <button onClick={goToProfile}>Profile</button>
+          <button id='UniversalFixedNav_button' onClick={logOut}>Log Out</button>
+          <button id='UniversalFixedNav_button' onClick={goToProfile}>Profile</button>
         </div>
         
         

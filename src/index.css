@@ -1,17 +1,93 @@
 p, h1 {
     font-family: sans-serif;
+    margin:0;
 }
 
 #divider {
     height: "0.5px";
-    background-color: "#c7c7c7";
+    background-color: #c7c7c7;
 }
 
 body {
     margin:0;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@700&family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&family=Nanum+Myeongjo:wght@400;700&family=Source+Sans+Pro:wght@400;600;700&display=swap');
+
+/* UniversalFixedNav */
+#UniversalFixedNav_logo {
+    width:fit-content;
+    cursor: pointer;
+    font-size: 35px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+#UniversalFixedNav_reflectButton {
+    background-color: rgb(255, 255, 255); 
+    border: none;
+    border-radius: 25px;
+    color: rgb(3, 146, 27);
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    font-family: "Source Sans Pro", sans-serif;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  #UniversalFixedNav_reflectButton:hover {
+    background-color: #f0f0f0; 
+    border-radius: 25px;
+    border: none;
+    color: rgb(3, 146, 27);
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    font-family: "Source Sans Pro", sans-serif;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  #UniversalFixedNav_button {
+    background-color: rgb(255, 255, 255); 
+    border: none;
+    border-radius: 25px;
+    color: rgb(0, 0, 0);
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    font-family: "Source Sans Pro", sans-serif;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  #UniversalFixedNav_button:hover {
+    background-color: #f0f0f0; 
+    border-radius: 25px;
+    border: none;
+    color: rgb(0, 0, 0);
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    font-family: "Source Sans Pro", sans-serif;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
 
 /* SearchBar */
 #SearchBarContainer {
@@ -35,8 +111,7 @@ body {
 #SearchBar_results {
     position: absolute;
     height:150px;
-    width: 30vw;
-    padding: 15px 25px 15px 25px;
+    width: 33vw;
     overflow: hidden;
     overflow-y: auto;
     border-radius:25px;
@@ -46,14 +121,18 @@ body {
     margin-top: 7px;
     border: 0.7px solid rgb(226, 226, 226);
     box-shadow: 0 2px 9px 0 rgba(0, 0, 0, 0.2);
+    font-family: "Source Sans Pro", sans-serif;
+    letter-spacing: 0.3px;
 
 }
 
 #SearchBarListItem:hover {
-    background-color: rgb(238, 238, 238);
+    background-color: rgb(244, 244, 244);
+    padding:15px;
 }
 
 #SearchBarListItem{
-    margin-bottom: 10px;
     text-align: left;
+    padding:15px;
+
 }

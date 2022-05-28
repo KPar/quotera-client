@@ -6,7 +6,7 @@ import LogIn from "./pages/LogIn/LogIn";
 import SignUp from "./pages/SignUp/SignUp";
 import Settings from "./pages/Settings/Settings";
 import ReadReflection from "./pages/ReadReflection/ReadReflection";
-import SearchResults from "./pages/SearchResults";
+import SearchResults from "./pages/SearchResults/SearchResults";
 import UniversalFixedNav from "./components/UniversalFixedNav";
 import CreateReflection from "./pages/CreateReflection/CreateReflection";
 

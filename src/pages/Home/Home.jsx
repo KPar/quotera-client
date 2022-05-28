@@ -1,22 +1,9 @@
 import {useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import SearchBar from "../../components/SearchBar";
+import "../Home/Home.css"
 
 function Home() {
-  const styles = {
-    container: {
-      width: "100%",
-      marginTop:"100px"
-    },
-    contentContainer: {
-      marginTop:"200px",
-      textAlign: "center"
-    },
-    siteName : {
-      fontSize: "90px",
-      fontFamily: "Open Sans, sans-serif"
-    }
-  }
 
   let navigate = useNavigate();
   const searchRef = useRef();
@@ -27,9 +14,9 @@ function Home() {
   }
   
   return (
-    <div style={styles.container}>
-      <div style={styles.contentContainer}>
-        <h1 style={styles.siteName}>Quotera</h1>
+    <div id="Home_container">
+      <div id="Home_contentContainer">
+        <h1 id="Home_siteName">Quotera</h1>
         <SearchBar/>
       </div>
     </div>

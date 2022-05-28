@@ -6,8 +6,6 @@ function SearchResultsList() {
   const [searchParams, setSearchParams] = useSearchParams();
   const [searchResults, setSearchResults] = useState([]);
   useEffect(() => {
-      //fetch data and assign to state
-      console.log();
       const getResults = async () => {
         try{
           let res = await fetch(`http://localhost:5500/reflections/books/${searchParams.get("id")}`);
@@ -19,7 +17,7 @@ function SearchResultsList() {
           }
           
         } catch (err){
-            console.log("k "+err);
+            console.log(err);
         }
       }
 

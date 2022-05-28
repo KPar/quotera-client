@@ -83,6 +83,11 @@ function CreateReflection() {
               setSelectedBookID(dataRes.book_id);
               quoteRef.current.value = quote;
               reflectionRef.current.value = reflection;
+
+              // Required to have height of textarea fit the content when user enters page. 
+              // Triggers an input event, which triggers the height to be set.
+              reflectionRef.current.dispatchEvent(new Event('input', {bubbles:true}));
+              quoteRef.current.dispatchEvent(new Event('input', {bubbles:true}));
             }
       } catch (error) {
         

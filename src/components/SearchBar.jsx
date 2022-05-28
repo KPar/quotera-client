@@ -1,6 +1,8 @@
-import React, { useRef, useState } from 'react'
+import React, { createContext, useRef, useState } from 'react'
 import SearchBarResults from './SearchBarResults';
 import "../pages/Home/Home.css"
+
+export const SearchBarContext = createContext()
 
 function HomeSearchBar() {
 
@@ -33,8 +35,10 @@ function HomeSearchBar() {
 
   return (
     <form id="SearchBarContainer" onSubmit={goToSearch}>
-        <input ref= {inputRef} id = "SearchBar_searchInput" type = "text" onChange={fetchResults} placeholder="Search by Book Title or ISBN"/>
-        <SearchBarResults results={results}/>
+        <input ref= {inputRef} id = "SearchBar_searchInput" type = "text" autoComplete='off' onChange={fetchResults} placeholder="Search by Book Title or ISBN"/>
+        <SearchBarContext.Provider value={{setResults, inputRef}}>
+          <SearchBarResults results={results}/>
+        </SearchBarContext.Provider>
     </form>
   )
 }

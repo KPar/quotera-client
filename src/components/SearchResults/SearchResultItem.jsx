@@ -1,32 +1,11 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom"
+import "../../pages/SearchResults/SearchResults.css"
 
 function SearchResultItem({searchResult}) {
-    const {reflection_id, reflection, user_id, quote} = searchResult
+    const {reflection_id, reflection, user_id, quote, date_modified} = searchResult
     const [username, setUsername] = useState([]);
-     const styles = {
-       divider: {
-        height: "0.5px",
-        backgroundColor: "#c7c7c7"
-       },
-        title: {
-          fontSize:"20px", 
-          marginBottom:-10, 
-          fontWeight: "bold"
-        },
-        contentStyle : {
-          fontSize:"14px", 
-          marginBottom:10, 
-          overflow:"hidden", 
-          textOverflow:"ellipsis", 
-          width:"50%", 
-          display: "-webkit-box", 
-          WebkitLineClamp: 2, 
-          WebkitBoxOrient: "vertical", 
-          lineHeight:"16px", 
-          maxHeight:"32px"
-        },
-      }
+     
       const navigate = useNavigate();
       const goToReflection = () => {
         navigate(`/reflection/${reflection_id}`);
@@ -54,12 +33,15 @@ function SearchResultItem({searchResult}) {
      },[]);
      
     return (
-      <div onClick={goToReflection} style={{cursor:"pointer"}}>
-        <p style={styles.title}>{quote}</p>
-        <p style={styles.contentStyle}> {reflection}</p>
-        <p style={styles.contentStyle}>By {username}</p>
-
-        <div style={styles.divider}></div>
+      <div id="SearchResultsItem_container" onClick={goToReflection} style={{cursor:"pointer"}}>
+        <div id="SearchResultsItem_usernameDateFlex">
+          <p id="SearchResultsItem_username">{username}</p>
+          <p id="SearchResultsItem_date">・{date_modified.slice(0,date_modified.indexOf("T"))}</p>
+        </div>
+        
+        <p id="SearchResultsItem_quote">{quote}</p>
+        <p id="SearchResultsItem_contentStyle"> {reflection}</p>
+        <div id= "SearchResultsItem_divider"></div>
       </div>
     )
   }
