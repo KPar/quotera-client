@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import "../ReadReflection/ReadReflection.css"
 
 function ReadReflection() {
@@ -18,8 +18,8 @@ function ReadReflection() {
   const [username, setUsername] = useState([]);
 
   const {reflectionID} = useParams();  
+  const navigate = useNavigate();
   const getBook = async (bookID) => {
-    //console.log(bookID)
     try{
       let res = await fetch(`http://localhost:5500/books/id/${bookID}`);
       if(res.status===404){
@@ -72,11 +72,18 @@ const getUsername = async (user_id) => {
     getReflection()
  },[]);
 
+  const goToSearch = () => {
+    navigate(`/search?id=${data.book_id}`);
+  }
+
+  const goToProfile = () => {
+    navigate(`/users/${data.user_id}`);
+  }
   return (
     <div id="ReadReflection_container">      
       
 
-      <div id="ReadReflection_bookContainer">
+      <div id="ReadReflection_bookContainer" onClick={goToSearch} style={{cursor:'pointer'}}>
         <div id="ReadReflection_bookImageContainer">
           <img style={{borderRadius:"10px"}} id="ReadReflection_bookImage" alt="bookCover" src={`https://covers.openlibrary.org/b/isbn/${bookData.isbn}-M.jpg`}/>
         </div>
@@ -87,7 +94,7 @@ const getUsername = async (user_id) => {
         </div>
       </div>
       <div id='ReadReflection_usernameDateContainer'>
-        <p id='ReadReflection_username'>{username}</p>
+        <p id='ReadReflection_username' onClick={goToProfile}>{username}</p>
         <p id='ReadReflection_date'>{data.date_created.slice(0,data.date_created.indexOf("T"))}</p>
       </div>
       

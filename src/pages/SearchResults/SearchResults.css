@@ -65,6 +65,14 @@
     margin-bottom: 10px;
     }
 
+#SearchResultsItem_username:hover {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 10px;
+    text-decoration: underline;
+    }
+
 #SearchResultsItem_usernameDateFlex {
     display: flex;
     align-items: center;

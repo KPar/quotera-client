@@ -32,10 +32,17 @@ function SearchResultItem({searchResult}) {
         getUsername()
      },[]);
      
+     const goToProfile = (e) => {
+       navigate(`/users/${user_id}`);
+       e.stopPropogation();
+       
+
+
+     }
     return (
       <div id="SearchResultsItem_container" onClick={goToReflection} style={{cursor:"pointer"}}>
         <div id="SearchResultsItem_usernameDateFlex">
-          <p id="SearchResultsItem_username">{username}</p>
+          <p id="SearchResultsItem_username" onClickCapture={goToProfile}>{username}</p>
           <p id="SearchResultsItem_date">・{date_modified.slice(0,date_modified.indexOf("T"))}</p>
         </div>
         

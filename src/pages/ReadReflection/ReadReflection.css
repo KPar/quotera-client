@@ -59,9 +59,20 @@
   }
 
   #ReadReflection_username{
+    width: fit-content;
+
     font-family: "Source Sans Pro", sans-serif;
     font-weight: 500;
     font-size: 20px;
+  }
+
+  #ReadReflection_username:hover{
+    width: fit-content;
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    cursor: pointer;
+    text-decoration: underline;
   }
 
   #ReadReflection_date{
