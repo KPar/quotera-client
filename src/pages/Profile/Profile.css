@@ -1,31 +1,175 @@
+/* Profile */
+#Profile_heading {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size:44px;
+    font-weight: 400;
+    margin-bottom: 25px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    line-height: 1.5;
+}
+
 /* ProfileBio */
 #ProfileBio_container {
     height: fit-content;
     width: 100%;
-    border-bottom: solid 0.5px;
+    padding-bottom: 25px;
+    padding-top: 25px;
+    border-bottom: solid 0.5px #c7c7c7;
+    margin-bottom:25px;
+}
+
+#ProfileBio_username {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 27px;
+    font-weight: 400;
+    margin-bottom: 10px;
+    margin-left:2px;
+    color: rgb(0, 0, 0);
+}
+
+#ProfileBio_joinDate {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 10px;
+    margin-left:2px;
+    color: rgb(124, 124, 124);
 }
 
 /* ProfileReflectionListItem */
+#ProfileReflectionListItem_containerFlex {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 #ProfileReflectionListItem_divider {
     height: 0.5px;
     background-color: #c7c7c7;
-}
-#ProfileReflectionListItem_title {
-    font-size:20px; 
-    font-family:  "Nanum Myeongjo, serif";
-    margin-bottom: -10;
-    font-weight: bold;
+    margin-top: 25px;
+    margin-bottom: 25px;
+   }
+
+#ProfileReflectionListItem_quote {
+    font-family:'Times New Roman', Times, serif;
+    font-size: 24px;
+    font-style: italic;
+    border-left: 3px solid black;
+    padding-left: 5px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    line-height: 1.5;
 }
 #ProfileReflectionListItem_contentStyle {
-    font-size: 17px;
-    font-family:  "Nanum Myeongjo, serif";
-    margin-bottom: 10;
-    overflow: hidden; 
+    font-family: 'Nanum Myeongjo', serif;
+    font-size:16px;
+    font-weight: 800;
+    overflow: hidden;
     text-overflow: ellipsis;
-    width:"50%";
-    display: "-webkit-box"; 
+    display: -webkit-box;
     -webkit-line-clamp: 2;
-    -webkit-box-orient: "vertical";
-    line-height:"16px";
-    max-height:"32px";
+    -webkit-box-orient: vertical;
+    line-height: 1.5;
 }
+
+#ProfileReflectionListItem_bookFlex {
+    display: flex;
+    align-items: center;
+}
+
+#ProfileReflectionListItem_bookTitle {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 10px;
+    margin-left:2px;
+    color: rgb(124, 124, 124);
+}
+
+#ProfileReflectionListItem_bookAuthor {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 10px;
+    margin-left:2px;
+    color: rgb(124, 124, 124);
+}
+
+#ProfileReflectionListItem_buttonFlex {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-top: 10px;
+    gap: 15px;
+  }
+
+#ProfileReflectionListItem_button {
+    background-color: rgb(132, 189, 138); 
+    border: none;
+    border-radius: 25px;
+    color: rgb(255, 255, 255);
+    padding: 0px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    font-family: "Source Sans Pro", sans-serif;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  #ProfileReflectionListItem_button:hover {
+    background-color: rgb(147, 207, 152); 
+    border-radius: 25px;
+    border: none;
+    color: rgb(255, 255, 255);
+    padding: 10px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    font-family: "Source Sans Pro", sans-serif;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  #ProfileReflectionListItem_deleteButton {
+    background-color: #ffe9e9; 
+    border: none;
+    border-radius: 25px;
+    color: rgb(214, 47, 47);
+    padding: 10px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    font-family: "Source Sans Pro", sans-serif;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  #ProfileReflectionListItem_deleteButton:hover {
+    background-color: #faf2f2; 
+    border-radius: 25px;
+    border: none;
+    color: rgb(214, 47, 47);
+    padding: 10px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    font-family: "Source Sans Pro", sans-serif;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+    cursor: pointer;
+  }

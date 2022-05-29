@@ -98,8 +98,8 @@ function UniversalFixedNav() {
   }, [location]);
 
   return (
-    <div style={styles.navContainer}>
-      <div style={styles.nav} >
+    <div id = "UniversalFixedNav_navContainer" style={{display: isCreateOrEditPage? "none":"block"}}>
+      <div id = "UniversalFixedNav_nav" >
         <h1 id="UniversalFixedNav_logo" onClick={goToHome}>Quotera</h1>
         <div style={{display: (isHomePage? "none": "block")}}>
           <SearchBar/>

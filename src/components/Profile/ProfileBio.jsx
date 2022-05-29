@@ -30,9 +30,9 @@ function ProfileBio() {
    },[]);
 
   return (
-    <div id="ProfileBio_container">
-        <h2>{bioData.username}</h2>
-        <p>Joined {bioData.date_created.slice(0,bioData.date_created.indexOf("T"))}</p>
+    <div id = "ProfileBio_container">
+        <h2 id = "ProfileBio_username">{bioData.username}</h2>
+        <p id = "ProfileBio_joinDate">Joined {bioData.date_created.slice(0,bioData.date_created.indexOf("T"))}</p>
     </div>
   )
 }

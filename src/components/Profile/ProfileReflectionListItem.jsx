@@ -54,14 +54,20 @@ function ProfileReflectionListItem({listItem, getReflections}) {
 
    return (
      <div style={{cursor:"pointer"}}>
-       <div onClick={goToReflection}>
-       <p id="ProfileReflectionListItem_title">{quote}</p>
-       <p id="ProfileReflectionListItem_contentStyle">{reflection}</p>
-         <p id="ProfileReflectionListItem_contentStyle">{bookData.title}</p>
-        <p id="ProfileReflectionListItem_contentStyle">By {bookData.author}</p>
-       </div>
-       <button onClick={goToEdit} style={{display: isPersonalProfile? "block":"none"}}>Edit</button>
-       <button onClick={deleteReflection} style={{display: isPersonalProfile? "block":"none"}}>Delete</button>
+       <div id="ProfileReflectionListItem_containerFlex">
+          <div onClick={goToReflection}> 
+            <div id="ProfileReflectionListItem_bookFlex">
+              <p id="ProfileReflectionListItem_bookTitle">{bookData.title}</p>
+              <p id="ProfileReflectionListItem_bookAuthor">by {bookData.author}</p>
+            </div>
+            <p id="ProfileReflectionListItem_quote">{quote}</p>
+            <p id="ProfileReflectionListItem_contentStyle">{reflection}</p>
+          </div>
+          <div id="ProfileReflectionListItem_buttonFlex">
+            <button id="ProfileReflectionListItem_button" onClick={goToEdit} style={{display: isPersonalProfile? "block":"none"}}>Edit</button>
+            <button id="ProfileReflectionListItem_deleteButton" onClick={deleteReflection} style={{display: isPersonalProfile? "block":"none"}}>Delete</button>
+          </div>
+        </div>
        <div id="ProfileReflectionListItem_divider"></div>
      </div>
    )

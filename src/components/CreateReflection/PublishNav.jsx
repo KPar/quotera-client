@@ -82,8 +82,8 @@ function PublishNav() {
   return (
     <div id="PublishNav_container">
       <div id="PublishNav_nav" >
-        <h1 onClick={goToHome} style={{cursor:'pointer'}}>Quotera</h1>
-        <button onClick={publish}>Publish</button>
+        <h1 id='PublishNav_logo' onClick={goToHome} style={{cursor:'pointer'}}>Quotera</h1>
+        <button id='PublishNav_publishButton' onClick={publish}>Publish</button>
 
       </div>
     </div>

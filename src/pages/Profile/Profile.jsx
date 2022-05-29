@@ -31,7 +31,7 @@ function Profile() {
     <div style={{width:"70vw", margin:"auto", marginTop:"100px"}}>
       <ProfileContext.Provider value = {{isPersonalProfile, setisPersonalProfile}}>
         <ProfileBio/>
-        <h1 style={{textAlign:"center"}}>Reflections</h1>
+        <h1 id="Profile_heading">Reflections</h1>
         <ProfileReflectionsList/>
       </ProfileContext.Provider>
     </div>

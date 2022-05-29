@@ -15,18 +15,22 @@ function BookAdderSelection() {
   if(isBookSelected){
     return (
         <div>
-                <div id="BookAdderSelection_bookContainer">
+            <div id="BookAdderSelection_bookContainer">
                 <div id="BookAdderSelection_bookImageContainer">
-                  <img id="BookAdderSelection_bookImage" alt="bookCover" src={`https://covers.openlibrary.org/b/isbn/${bookSelectionData.isbn}-M.jpg`}/>
+                  <img style={{borderRadius:"10px"}} id="BookAdderSelection_bookImage" alt="bookCover" src={`https://covers.openlibrary.org/b/isbn/${bookSelectionData.isbn}-M.jpg`}/>
                 </div>                    
-                    <div>
-                        <p>{bookSelectionData.title}</p>
-                        <p>{bookSelectionData.author}</p>
-                        <p>{bookSelectionData.isbn}</p>
-                    </div>
+                <div id='BookAdderSelection_bookText'>
+                    <p>{bookSelectionData.title}</p>
+                    <p>{bookSelectionData.author}</p>
+                    <p>{bookSelectionData.isbn}</p>
                 </div>
-                <button style={{width: "fit-content" }} onClick={onChangeBtn}>Change</button>
+                <div>
+                  <button id='BookAdderSelection_changeButton' onClick={onChangeBtn}>Change</button>
+                </div>
             </div>
+            
+            
+          </div>
       )
   }
   

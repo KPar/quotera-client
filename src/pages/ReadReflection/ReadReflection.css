@@ -13,13 +13,24 @@
 }
 
 #ReadReflection_bookContainer {
+    font-family: "Source Sans Pro", sans-serif;
+    letter-spacing: 0.7px;
+    font-weight: 400;
     display: flex;
-    box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.2);
+    border: solid 0.7px #a9a9a9;
     width: fit-content;
-    border-radius: 10px;
-    padding:10px;
+    border-radius: 15px;
+    padding:20px;
     column-gap: 15px;
     margin-bottom:30px;
+    align-items: center;
+}
+
+#ReadReflection_bookText{
+    color: rgb(27, 27, 27);
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }
 #ReadReflection_bookImageContainer{
     height: fit-content;
@@ -33,9 +44,30 @@
 
 #ReadReflection_reflection {
     margin: auto;
-    line-height: 1.7em;
-    letter-spacing: 0.2px;
+    line-height: 1.5;
     font-size: 21px;
-    font-family: "Nanum Myeongjo, serif";
+    font-family:'Times New Roman', Times, serif;
+    letter-spacing: 0.2px;
     white-space: pre-wrap;
   }
+
+  #ReadReflection_usernameDateContainer{
+    display: flex;
+    flex-direction: column;
+    gap:5px;
+    margin-bottom: 25px;
+  }
+
+  #ReadReflection_username{
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+  }
+
+  #ReadReflection_date{
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    letter-spacing: 0.2px;
+    color: rgb(146, 146, 146);
+}

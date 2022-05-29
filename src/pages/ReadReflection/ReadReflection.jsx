@@ -13,7 +13,7 @@ function ReadReflection() {
       paddingLeft: "20px"
     }
   }
-  const [data, setData] = useState([]);
+  const [data, setData] = useState({date_created:""});
   const [bookData, setBookData] = useState([]);
   const [username, setUsername] = useState([]);
 
@@ -78,16 +78,19 @@ const getUsername = async (user_id) => {
 
       <div id="ReadReflection_bookContainer">
         <div id="ReadReflection_bookImageContainer">
-          <img id="ReadReflection_bookImage" alt="bookCover" src={`https://covers.openlibrary.org/b/isbn/${bookData.isbn}-M.jpg`}/>
+          <img style={{borderRadius:"10px"}} id="ReadReflection_bookImage" alt="bookCover" src={`https://covers.openlibrary.org/b/isbn/${bookData.isbn}-M.jpg`}/>
         </div>
-        <div>
+        <div id='ReadReflection_bookText'>
           <p>{bookData.title}</p>
           <p>By {bookData.author}</p>
           <p>ISBN: {bookData.isbn}</p>
         </div>
       </div>
-      <h2>{username}</h2>
-      <p>{data.date_created}</p>
+      <div id='ReadReflection_usernameDateContainer'>
+        <p id='ReadReflection_username'>{username}</p>
+        <p id='ReadReflection_date'>{data.date_created.slice(0,data.date_created.indexOf("T"))}</p>
+      </div>
+      
       <div style={styles.quoteContainer}> 
         <p id="ReadReflection_quote">{data.quote}</p>
       </div>
