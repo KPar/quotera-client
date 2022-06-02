@@ -1,4 +1,10 @@
 /* Profile */
+#Profile_container{
+    width: 70vw; 
+    margin: auto; 
+    margin-top: 100px;
+}
+
 #Profile_heading {
     font-family: 'Source Sans Pro', sans-serif;
     font-size:44px;
@@ -10,6 +16,14 @@
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     line-height: 1.5;
+}
+
+@media only screen and (max-width:800px){
+    #Profile_container{
+        width: 90vw; 
+        margin: auto; 
+        margin-top: 200px;
+    }
 }
 
 /* ProfileBio */

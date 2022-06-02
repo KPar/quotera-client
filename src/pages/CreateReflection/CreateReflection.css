@@ -31,7 +31,36 @@
   box-shadow: 0 2px 9px 0 rgba(0, 0, 0, 0.2);
   font-family: "Source Sans Pro", sans-serif;
   letter-spacing: 0.3px;
+}
 
+@media only screen and (max-width:800px){
+  #BookAdderSearchBar_searchInput {
+    width: 70vw;
+    font-size: 15px;
+    outline: none;
+    padding: 13px 25px 13px 25px;
+    background-color: white;
+    margin: 0px auto;
+    border: 0.7px solid rgb(180, 180, 180);
+    border-radius: 25px;
+  }
+  
+  #BookAdderSearchBar_results {
+    position: absolute;
+    height:150px;
+    width: 75vw;
+    overflow: hidden;
+    overflow-y: auto;
+    border-radius:25px;
+    background-color: white;
+    cursor: pointer;
+    margin: auto;
+    margin-top: 7px;
+    border: 0.7px solid rgb(226, 226, 226);
+    box-shadow: 0 2px 9px 0 rgba(0, 0, 0, 0.2);
+    font-family: "Source Sans Pro", sans-serif;
+    letter-spacing: 0.3px;
+  }
 }
 
 /* BookAdderListItem */
@@ -158,6 +187,18 @@
     padding-left: 20px;
 }
 
+@media only screen and (max-width:800px){
+  #CreateReflection_container {
+    height: 90vh;
+    width: 90vw;
+    margin: auto;
+    margin-top: 150px;
+  }
+}
+
+
+
+
 #PublishNav_container {
     position: fixed;
     top: 0;
@@ -169,7 +210,7 @@
 
   #PublishNav_nav {
     height:100%;
-    width: 70vw;
+    width: 90vw;
     margin: auto;
     display: flex;
     justify-content: space-between;
@@ -215,4 +256,39 @@
   letter-spacing: 0.5px;
   font-weight: 600;
   cursor: pointer;
+}
+
+@media only screen and (max-width:800px){
+
+  #PublishNav_publishButton {
+    background-color: rgb(255, 255, 255); 
+    border: none;
+    border-radius: 25px;
+    color: rgb(11, 175, 38);
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    font-family: "Source Sans Pro", sans-serif;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  
+  #PublishNav_publishButton:hover {
+    background-color: rgb(222, 245, 226); 
+    border-radius: 25px;
+    border: none;
+    color: rgb(11, 175, 38);
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    font-family: "Source Sans Pro", sans-serif;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+    cursor: pointer;
+  }
 }

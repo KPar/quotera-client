@@ -26,18 +26,13 @@ function SearchResultItem({searchResult}) {
           } catch (err){
               console.log(err);
           }
-        }
-        console.log(username)
-  
+        }  
         getUsername()
      },[]);
      
      const goToProfile = (e) => {
        navigate(`/users/${user_id}`);
-       e.stopPropogation();
-       
-
-
+       e.stopPropagation();
      }
     return (
       <div id="SearchResultsItem_container" onClick={goToReflection} style={{cursor:"pointer"}}>

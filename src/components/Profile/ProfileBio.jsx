@@ -17,7 +17,10 @@ function ProfileBio() {
         try {
             let res = await fetch(`http://localhost:5500/users/${userID}`);
             if(res.status===404){
-              setBioData({})
+              setBioData({
+                username: "",
+                date_created:""
+              })
             }else{
                let dataRes = await res.json();              
                setBioData(dataRes);

@@ -8,6 +8,7 @@ function UniversalFixedNav() {
   const [isHomePage, setIsHomePage] = useState();
   const [isCreateOrEditPage, setIsCreateOrEditPage] = useState();
   const [userID, setUserID] = useState();
+  const mobileButtonsContainer = useRef();
 
   const styles = {
     navContainer: {
@@ -76,12 +77,16 @@ function UniversalFixedNav() {
     }
   }
 
+  const toggleMenu = () => {
+    mobileButtonsContainer.current.classList.toggle("UniversalFixedNav_inactiveMenuNav");
+  }
+
   
   //this will handle changing state based on current route, which will in turn affect rendering of components
   useEffect(() => {
     async function isAuthenticated(){
       try{
-          let res = await fetch('http://localhost:5500/checkLoggedIn', {mode:'cors', credentials: 'include'});
+          let res = await fetch('http://localhost:5500/checkLoggedIn', {credentials: 'include'});
           let dataRes = await res.json();
           setIsUserAuth(dataRes.isAuthenticated)
           setUserID(dataRes.userID);
@@ -105,16 +110,21 @@ function UniversalFixedNav() {
           <SearchBar/>
         </div>
         <button id='UniversalFixedNav_reflectButton' onClick={goToCreateReflection}>Reflect</button>
-        <div style={{display: (isUserAuth? "none": "block")}}>
-          <button id='UniversalFixedNav_button' onClick={goToLogIn}>Log In</button>
-          <button id='UniversalFixedNav_button' onClick={goToSignUp}>Sign Up</button>
+        <div ref={mobileButtonsContainer} className='UniversalFixedNav_inactiveMenuNav'>
+          <div className='UniversalFixedNav_buttonContainer' style={{display: (isUserAuth? "none": "flex")}}>
+            <button className='UniversalFixedNav_button' onClick={goToLogIn}>Log In</button>
+            <button className='UniversalFixedNav_button' onClick={goToSignUp}>Sign Up</button>
+          </div>
+          <div  className='UniversalFixedNav_buttonContainer' style={{display: isUserAuth? "flex": "none"}}>
+            <button className='UniversalFixedNav_button' onClick={logOut}>Log Out</button>
+            <button className='UniversalFixedNav_button' onClick={goToProfile}>Profile</button>
+          </div>
         </div>
-        <div style={{display: isUserAuth? "block": "none"}}>
-          <button id='UniversalFixedNav_button' onClick={logOut}>Log Out</button>
-          <button id='UniversalFixedNav_button' onClick={goToProfile}>Profile</button>
-        </div>
-        
-        
+      </div>
+      <div  id='UniversalFixedNav_toggle' onClick={toggleMenu}>
+        <span className='UniversalFixedNav_toggleBar'></span>
+        <span className='UniversalFixedNav_toggleBar'></span>
+        <span className='UniversalFixedNav_toggleBar'></span>
       </div>
     </div>
   )

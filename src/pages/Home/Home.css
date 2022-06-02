@@ -16,3 +16,14 @@
     letter-spacing: 2px;
     margin-bottom: 25px;
   }
+
+  @media only screen and (max-width: 800px) {
+    #Home_siteName {
+      font-size: 60px;
+      font-family: "Montserrat", sans-serif;
+      font-weight: 500;
+      letter-spacing: 2px;
+      margin-bottom: 25px;
+    }
+
+  }

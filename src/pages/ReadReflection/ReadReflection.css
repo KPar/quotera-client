@@ -82,3 +82,12 @@
     letter-spacing: 0.2px;
     color: rgb(146, 146, 146);
 }
+
+@media only screen and (max-width:800px){
+  #ReadReflection_container {
+    margin: auto;
+    margin-top:250px;
+    width: 90vw;
+    margin-bottom: 70px;
+}
+}

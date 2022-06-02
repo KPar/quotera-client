@@ -51,7 +51,7 @@ const getUsername = async (user_id) => {
         try{
           let res = await fetch(`http://localhost:5500/reflections/${reflectionID}`);
           if(res.status===404){
-            setData({})
+            setData({date_created:""})
           }else{
             let dataRes = await res.json();   
             setData(dataRes);
