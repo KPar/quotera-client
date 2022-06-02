@@ -109,7 +109,7 @@ function UniversalFixedNav() {
         <div style={{display: (isHomePage? "none": "block")}}>
           <SearchBar/>
         </div>
-        <button id='UniversalFixedNav_reflectButton' onClick={goToCreateReflection}>Reflect</button>
+        <button id='UniversalFixedNav_reflectButton' style={{display: (isUserAuth? "block": "none")}} onClick={goToCreateReflection}>Reflect</button>
         <div ref={mobileButtonsContainer} className='UniversalFixedNav_inactiveMenuNav'>
           <div className='UniversalFixedNav_buttonContainer' style={{display: (isUserAuth? "none": "flex")}}>
             <button className='UniversalFixedNav_button' onClick={goToLogIn}>Log In</button>

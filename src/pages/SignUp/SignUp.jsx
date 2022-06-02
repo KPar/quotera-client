@@ -31,7 +31,7 @@ function SignUp() {
       }
       let res = await fetch('http://localhost:5500/register', requestOptions);
       let resStatus = res.status;
-      console.log(resStatus);
+      console.log(JSON.stringify(data))
       if(resStatus===201) {
         navigate('/log-in');
       }else{
