@@ -16,14 +16,14 @@ function HomeSearchBar() {
         return;
       }
       try{      
-        inputRef.current.style.backgroundColor = "blue"
-
           let res = await fetch(`https://quotera.herokuapp.com/books/q?data=${inputRef.current.value.trim()}`);
           if(res.status===404){
             setResults([])
-          }else{
+            inputRef.current.style.backgroundColor = "pink";
+          }else{        
             let dataRes = await res.json();
-            setResults(dataRes)
+            setResults(dataRes);            
+            inputRef.current.style.backgroundColor = "green";
           }
           
       } catch (err){
