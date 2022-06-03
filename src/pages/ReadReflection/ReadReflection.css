@@ -8,7 +8,7 @@
 
 #ReadReflection_quote {
     font-size: 30px;
-    font-family:  "Nanum Myeongjo, serif";
+    font-family:  "Times New Roman", serif;
     font-style: italic;
 }
 
@@ -46,7 +46,7 @@
     margin: auto;
     line-height: 1.5;
     font-size: 21px;
-    font-family:'Times New Roman', Times, serif;
+    font-family: 'Times New Roman', serif;
     letter-spacing: 0.2px;
     white-space: pre-wrap;
   }
@@ -86,8 +86,17 @@
 @media only screen and (max-width:800px){
   #ReadReflection_container {
     margin: auto;
-    margin-top:250px;
+    margin-top:200px;
     width: 90vw;
     margin-bottom: 70px;
+}
+
+#ReadReflection_reflection {
+  margin: auto;
+  line-height: 1.5;
+  font-size: 18px;
+  font-family: 'Nanum Myeongjo', serif;
+  letter-spacing: 0.2px;
+  white-space: pre-wrap;
 }
 }
