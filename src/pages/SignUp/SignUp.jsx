@@ -49,16 +49,16 @@ function SignUp() {
         {/* <input id='SignUp_input' type="text" name='displayName' placeholder='Display Name...' {...register("displayName")}/>
         <p>{errors.displayName && "Display Name is a required field"}</p> */}
 
-        <input id='SignUp_input' type="email" name='email' placeholder='Email...' {...register("email")}/>
+        <input className='SignUp_input' type="email" name='email' placeholder='Email...' {...register("email")}/>
         <p>{errors.email?.message}</p>
 
-        <input id='SignUp_input' type="text" name='username' placeholder='Username...' {...register("username")}/>
+        <input className='SignUp_input' type="text" name='username' placeholder='Username...' {...register("username")}/>
         <p>{errors.username?.message}</p>
 
-        <input id='SignUp_input' type="password" name='password' placeholder='Password...' {...register("password")}/>
+        <input className='SignUp_input' type="password" name='password' placeholder='Password...' {...register("password")}/>
         <p>{errors.password?.message}</p>
 
-        <input id='SignUp_input' type="password" name='confirmPassword' placeholder='Confirm Password...' {...register("confirmPassword")}/>
+        <input className='SignUp_input' type="password" name='confirmPassword' placeholder='Confirm Password...' {...register("confirmPassword")}/>
         <p>{errors.confirmPassword && "Passwords must match"}</p>
 
 

@@ -50,10 +50,10 @@ function LogIn() {
     <div id="LogIn_container">
       <h1 id='LogIn_heading'>Log In</h1>
       <form onSubmit={handleSubmit(submitForm)}>
-        <input id='LogIn_input' type="text" name='username' placeholder='Username...' {...register("username")}/>
+        <input className='LogIn_input' type="text" name='username' placeholder='Username...' {...register("username")}/>
         <p>{errors.username?.message}</p>
 
-        <input id='LogIn_input' type="password" name='password' placeholder='Password...' {...register("password")}/>
+        <input className='LogIn_input' type="password" name='password' placeholder='Password...' {...register("password")}/>
         <p>{errors.password?.message}</p>
         <p style={{display: (failureStatus? 'block' : 'none')}}>Wrong password or username</p>
 

@@ -13,7 +13,7 @@
     text-align: center;
 }
 
-#SignUp_input {
+.SignUp_input {
   width: 15vw;
   font-size: 15px;
   outline: none;
@@ -58,4 +58,26 @@
   font-weight: 600;
   cursor: pointer;
   margin-top: 5px;
+}
+
+@media only screen and (max-width:800px){
+  #SignUp_container {
+    height: 90vh;
+    width: fit-content;
+    margin: auto;
+    margin-top: 200px;
+  }
+
+  .SignUp_input {
+    width: 70vw;
+    font-size: 15px;
+    outline: none;
+    padding: 10px 15px 10px 15px;
+    background-color: white;
+    margin: 0px auto;
+    border: 0.7px solid rgb(180, 180, 180);
+    border-radius: 10px;
+    margin-top: 7px;
+    margin-bottom: 7px;
+  }
 }
