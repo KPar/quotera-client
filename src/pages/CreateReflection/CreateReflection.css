@@ -210,7 +210,20 @@
     margin: auto;
     margin-top: 70px;
   }
-
+  #CreateReflection_quoteField {
+    margin: auto;
+    margin-bottom: 10px;
+    width: 100%;
+    outline: none;
+    border: none;
+    overflow: auto;
+    resize: none;
+    font-size: 25px;
+    font-family:  "Times New Roman", serif;
+    font-style: italic;
+    border-left: 3px solid black;
+    padding-left: 20px;
+}
   #CreateReflection_reflectionField {
     margin-top: 10vh;
     height: fit-content;

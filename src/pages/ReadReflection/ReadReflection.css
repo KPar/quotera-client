@@ -91,6 +91,11 @@
     width: 90vw;
     margin-bottom: 70px;
 }
+#ReadReflection_quote {
+  font-size: 25px;
+  font-family:  "Times New Roman", serif;
+  font-style: italic;
+}
 
 #ReadReflection_reflection {
   margin: auto;
