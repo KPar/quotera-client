@@ -18,7 +18,12 @@
   }
 
   @media only screen and (max-width: 800px) {
+    #Home_contentContainer {
+      margin-top: 100px;
+      text-align: center;
+    }
     #Home_siteName {
+      display: none;
       font-size: 60px;
       font-family: "Montserrat", sans-serif;
       font-weight: 500;
