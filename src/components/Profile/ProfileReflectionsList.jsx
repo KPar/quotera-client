@@ -7,7 +7,7 @@ function ProfileReflectionsList() {
     let {userID} = useParams();
     const getReflections = async () => {
             try {
-              let res = await fetch(`http://localhost:5500/reflections/users/${userID}`);
+              let res = await fetch(`https://quotera.herokuapp.com/reflections/users/${userID}`);
               if(res.status===404){
                 setReflectionsList([])
               }else{

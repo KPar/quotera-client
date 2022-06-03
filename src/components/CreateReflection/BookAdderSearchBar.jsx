@@ -19,7 +19,7 @@ function BookAdderSearchBar() {
         return;
       }
       try{
-          let res = await fetch(`http://localhost:5500/books/q?data=${inputRef.current.value.trim()}`);
+          let res = await fetch(`https://quotera.herokuapp.com/books/q?data=${inputRef.current.value.trim()}`);
           if(res.status===404){
             setResults([])
           }else{

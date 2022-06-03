@@ -15,7 +15,7 @@ function SearchResultItem({searchResult}) {
         //fetch username
         const getUsername = async () => {
           try{
-            let res = await fetch(`http://localhost:5500/users/${user_id}/username`);
+            let res = await fetch(`https://quotera.herokuapp.com/users/${user_id}/username`);
             if(res.status===404){
               setUsername("")
             }else{

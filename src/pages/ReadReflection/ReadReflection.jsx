@@ -21,7 +21,7 @@ function ReadReflection() {
   const navigate = useNavigate();
   const getBook = async (bookID) => {
     try{
-      let res = await fetch(`http://localhost:5500/books/id/${bookID}`);
+      let res = await fetch(`https://quotera.herokuapp.com/books/id/${bookID}`);
       if(res.status===404){
         setBookData({})
       }else{
@@ -35,7 +35,7 @@ function ReadReflection() {
 }
 const getUsername = async (user_id) => {
   try{
-    let res = await fetch(`http://localhost:5500/users/${user_id}/username`);
+    let res = await fetch(`https://quotera.herokuapp.com/users/${user_id}/username`);
     if(res.status===404){
       setUsername("")
     }else{
@@ -49,7 +49,7 @@ const getUsername = async (user_id) => {
 }
   const getReflection = async () => {
         try{
-          let res = await fetch(`http://localhost:5500/reflections/${reflectionID}`);
+          let res = await fetch(`https://quotera.herokuapp.com/reflections/${reflectionID}`);
           if(res.status===404){
             setData({date_created:""})
           }else{

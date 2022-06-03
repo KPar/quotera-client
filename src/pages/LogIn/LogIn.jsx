@@ -29,7 +29,7 @@ function LogIn() {
             body: JSON.stringify(data),
             credentials: 'include'
           };
-          let res = await fetch('http://localhost:5500/login', requestOptions);
+          let res = await fetch('https://quotera.herokuapp.com/login', requestOptions);
           let resStatus = res.status;
           if(resStatus===201) {
             setFailureStatus(false)

@@ -31,7 +31,7 @@ function PublishNav() {
               }),
               credentials: 'include'
             };
-            let res = await fetch(`http://localhost:5500/reflections/${reflectionID}`, requestOptions);
+            let res = await fetch(`https://quotera.herokuapp.com/reflections/${reflectionID}`, requestOptions);
             let resStatus = res.status;
             if(resStatus===401 || resStatus===403 || resStatus===404) {
               alert('Unauthorized')
@@ -60,7 +60,7 @@ function PublishNav() {
               }),
               credentials: 'include'
             };
-            let res = await fetch(`http://localhost:5500/reflections/`, requestOptions);
+            let res = await fetch(`https://quotera.herokuapp.com/reflections/`, requestOptions);
             let resStatus = res.status;
             if(resStatus===401 || resStatus===403 || resStatus===404) {
               alert('Unauthorized')

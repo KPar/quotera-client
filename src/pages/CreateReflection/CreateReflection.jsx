@@ -8,17 +8,6 @@ import "../CreateReflection/CreateReflection.css"
 export const createReflectionContext = createContext()
 
 function CreateReflection() {
-  
-  /*
-  first check if (its edit url) {
-    grab the param reflection id, then do a fetch 
-    this fetch will make sure user is authorized to edit the reflection, 
-    if they're not we will redirect them to the readBookSummary of this summary
-    if all is well, paste the data on the input field
-  } else {
-    don't display nothing, user will create a summary (no need for an else)
-  }
-  */
 
   const location = useLocation()
   const navigate = useNavigate()
@@ -61,7 +50,7 @@ function CreateReflection() {
     const checkEditPermission = async () => {
       try {
         console.log("id: "+reflectionID)
-        let res = await fetch(`http://localhost:5500/reflections/checkEditPermission/${reflectionID}`,{credentials: 'include'});
+        let res = await fetch(`https://quotera.herokuapp.com/reflections/checkEditPermission/${reflectionID}`,{credentials: 'include'});
         if(res.status!==200){
           navigate('/');
         }
@@ -73,7 +62,7 @@ function CreateReflection() {
     const setReflectionData = async () => {      
       checkEditPermission();
       try {
-        let res = await fetch(`http://localhost:5500/reflections/${reflectionID}`,{ credentials: 'include'});
+        let res = await fetch(`https://quotera.herokuapp.com/reflections/${reflectionID}`,{ credentials: 'include'});
             if(res.status===404){
               navigate('/');
             }else{

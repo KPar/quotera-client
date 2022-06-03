@@ -70,7 +70,7 @@ function UniversalFixedNav() {
         method: 'DELETE',
         credentials: 'include'
       };
-      await fetch('http://localhost:5500/logout', requestOptions);
+      await fetch('https://quotera.herokuapp.com/logout', requestOptions);
       navigate(`/`);
     } catch (err){
         console.log(err);
@@ -86,7 +86,7 @@ function UniversalFixedNav() {
   useEffect(() => {
     async function isAuthenticated(){
       try{
-          let res = await fetch('http://localhost:5500/checkLoggedIn', {credentials: 'include'});
+          let res = await fetch('https://quotera.herokuapp.com/checkLoggedIn', {credentials: 'include'});
           let dataRes = await res.json();
           setIsUserAuth(dataRes.isAuthenticated)
           setUserID(dataRes.userID);
