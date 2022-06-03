@@ -11,12 +11,13 @@ function HomeSearchBar() {
     const [results, setResults] = useState();
 
     const fetchResults = async (e) => {
-      inputRef.current.style.backgroundColor = "blue"
       if(inputRef.current.value.trim().length===0){
         setResults([]);
         return;
       }
-      try{
+      try{      
+        inputRef.current.style.backgroundColor = "blue"
+
           let res = await fetch(`https://quotera.herokuapp.com/books/q?data=${inputRef.current.value.trim()}`);
           if(res.status===404){
             setResults([])
