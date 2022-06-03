@@ -43,13 +43,14 @@
 }
 
 #ReadReflection_reflection {
-    margin: auto;
-    line-height: 1.5;
-    font-size: 21px;
-    font-family: 'Times New Roman', serif;
-    letter-spacing: 0.2px;
-    white-space: pre-wrap;
-  }
+  margin: auto;
+  line-height: 1.5;
+  font-size: 19px;
+  font-family: 'Nanum Myeongjo', serif;
+  letter-spacing: 0.2px;
+  white-space: pre-wrap;
+  font-weight: 800;
+}
 
   #ReadReflection_usernameDateContainer{
     display: flex;
@@ -98,5 +99,6 @@
   font-family: 'Nanum Myeongjo', serif;
   letter-spacing: 0.2px;
   white-space: pre-wrap;
+  font-weight: 800;
 }
 }
