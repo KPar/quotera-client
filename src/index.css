@@ -238,11 +238,9 @@ body {
     cursor: pointer;
     margin: auto;
     margin-top: 7px;
-    border: 0.7px solid rgb(226, 226, 226);
-    box-shadow: 0 2px 9px 0 rgba(0, 0, 0, 0.2);
+    border: 0.7px solid rgb(180, 180, 180);
     font-family: "Source Sans Pro", sans-serif;
     letter-spacing: 0.3px;
-
 }
 
 #SearchBarListItem:hover {
@@ -280,8 +278,7 @@ body {
     cursor: pointer;
     margin: auto;
     margin-top: 7px;
-    border: 0.7px solid rgb(226, 226, 226);
-    box-shadow: 0 2px 9px 0 rgba(0, 0, 0, 0.2);
+    border: 0.7px solid rgb(180, 180, 180);
     font-family: "Source Sans Pro", sans-serif;
     letter-spacing: 0.3px;
   }
