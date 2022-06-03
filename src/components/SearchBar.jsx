@@ -11,6 +11,7 @@ function HomeSearchBar() {
     const [results, setResults] = useState();
 
     const fetchResults = async (e) => {
+      inputRef.current.style.backgroundColor = "blue"
       if(inputRef.current.value.trim().length===0){
         setResults([]);
         return;
