@@ -19,7 +19,6 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    height: fit-content;
     padding-bottom: 25px;
     padding-top: 25px;
     border-bottom: 0.7px solid rgb(180, 180, 180);
@@ -124,7 +123,6 @@ body {
       position: fixed;
       top: 0;
       width: 100%;
-      height: fit-content;
       padding-bottom: 10px;
       padding-top: 8px;
       border-bottom: 0.7px solid rgb(180, 180, 180);
