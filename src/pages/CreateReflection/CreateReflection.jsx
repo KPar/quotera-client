@@ -50,7 +50,7 @@ function CreateReflection() {
     const checkEditPermission = async () => {
       try {
         console.log("id: "+reflectionID)
-        let res = await fetch(`https://quotera.herokuapp.com/reflections/checkEditPermission/${reflectionID}`,{credentials: 'include'});
+        let res = await fetch(`http://api.quotera.kennyparedes.com/reflections/checkEditPermission/${reflectionID}`,{credentials: 'include'});
         if(res.status!==200){
           navigate('/');
         }
@@ -62,7 +62,7 @@ function CreateReflection() {
     const setReflectionData = async () => {      
       checkEditPermission();
       try {
-        let res = await fetch(`https://quotera.herokuapp.com/reflections/${reflectionID}`,{ credentials: 'include'});
+        let res = await fetch(`http://api.quotera.kennyparedes.com/reflections/${reflectionID}`,{ credentials: 'include'});
             if(res.status===404){
               navigate('/');
             }else{

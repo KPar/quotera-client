@@ -24,7 +24,7 @@ function ProfileReflectionListItem({listItem, getReflections}) {
           method: 'DELETE',
           credentials: 'include'
         };
-        let res = await fetch(`https://quotera.herokuapp.com/reflections/${reflection_id}`, requestOptions);
+        let res = await fetch(`http://api.quotera.kennyparedes.com/reflections/${reflection_id}`, requestOptions);
         if(res.status!==200){
           alert("Unauthorized")
         }else{
@@ -38,7 +38,7 @@ function ProfileReflectionListItem({listItem, getReflections}) {
     useEffect(()=>{
       const getBookData = async () => {
         try {
-          let res = await fetch(`https://quotera.herokuapp.com/books/id/${book_id}`);
+          let res = await fetch(`http://api.quotera.kennyparedes.com/books/id/${book_id}`);
           if(res.status===404){
             setBookData({})
           }else{

@@ -20,7 +20,7 @@ function BookAdder() {
       console.log("book id: "+selectedBookID)    
       const setBook = async () => {
         try {
-          let res = await fetch(`https://quotera.herokuapp.com/books/id/${selectedBookID}`);
+          let res = await fetch(`http://api.quotera.kennyparedes.com/books/id/${selectedBookID}`);
             if(res.status===404){
               setBookSelectionData({})
             }else{

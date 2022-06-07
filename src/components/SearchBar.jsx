@@ -16,7 +16,7 @@ function HomeSearchBar() {
         return;
       }
       try{      
-          let res = await fetch(`https://quotera.herokuapp.com/books/q?data=${inputRef.current.value.toLowerCase().trim()}`);
+          let res = await fetch(`http://api.quotera.kennyparedes.com/books/q?data=${inputRef.current.value.toLowerCase().trim()}`);
           if(res.status===404){
             setResults([])
           }else{        

@@ -8,7 +8,7 @@ function SearchResultsList() {
   useEffect(() => {
       const getResults = async () => {
         try{
-          let res = await fetch(`https://quotera.herokuapp.com/reflections/books/${searchParams.get("id")}`);
+          let res = await fetch(`http://api.quotera.kennyparedes.com/reflections/books/${searchParams.get("id")}`);
           if(res.status===404){
             setSearchResults([])
           }else{

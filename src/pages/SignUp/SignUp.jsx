@@ -29,7 +29,7 @@ function SignUp() {
         body: JSON.stringify(data),
         credentials: 'include'
       }
-      let res = await fetch('https://quotera.herokuapp.com/register', requestOptions);
+      let res = await fetch('http://api.quotera.kennyparedes.com/register', requestOptions);
       let resStatus = res.status;
       console.log(JSON.stringify(data))
       if(resStatus===201) {

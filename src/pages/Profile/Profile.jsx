@@ -13,7 +13,7 @@ function Profile() {
   useEffect(() => {
       const authProfile = async () => {
         try {
-          let res = await fetch(`https://quotera.herokuapp.com/users/${userID}/auth`,{credentials:'include'});
+          let res = await fetch(`http://api.quotera.kennyparedes.com/users/${userID}/auth`,{credentials:'include'});
           if(res.status===200){
             setisPersonalProfile(true)
           }else{
