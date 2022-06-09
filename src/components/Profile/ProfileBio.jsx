@@ -15,7 +15,7 @@ function ProfileBio() {
   useEffect(() => {  
     const setBio = async () => {          
         try {
-            let res = await fetch(`http://api.quotera.kennyparedes.com/users/${userID}`);
+            let res = await fetch(`https://apiquotera.kennyparedes.com/users/${userID}`);
             if(res.status===404){
               setBioData({
                 username: "",

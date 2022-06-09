@@ -10,7 +10,7 @@ function SearchResults() {
   useEffect(()=>{
     const getBook = async () => {
       try{
-        let res = await fetch(`http://api.quotera.kennyparedes.com/books/id/${searchParams.get("id")}`);
+        let res = await fetch(`https://apiquotera.kennyparedes.com/books/id/${searchParams.get("id")}`);
         if(res.status===404){
           setBook([])
         }else{

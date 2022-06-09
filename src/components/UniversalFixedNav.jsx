@@ -70,7 +70,7 @@ function UniversalFixedNav() {
         method: 'DELETE',
         credentials: 'include'
       };
-      await fetch('http://api.quotera.kennyparedes.com/logout', requestOptions);
+      await fetch('https://apiquotera.kennyparedes.com/logout', requestOptions);
       navigate(`/`);
     } catch (err){
         console.log(err);
@@ -86,7 +86,7 @@ function UniversalFixedNav() {
   useEffect(() => {
     async function isAuthenticated(){
       try{
-          let res = await fetch('http://api.quotera.kennyparedes.com/checkLoggedIn', {credentials: 'include'});
+          let res = await fetch('https://apiquotera.kennyparedes.com/checkLoggedIn', {credentials: 'include'});
           let dataRes = await res.json();
           setIsUserAuth(dataRes.isAuthenticated)
           setUserID(dataRes.userID);
