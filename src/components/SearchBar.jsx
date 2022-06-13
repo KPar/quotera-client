@@ -35,7 +35,7 @@ function HomeSearchBar() {
 
   return (
     <form id="SearchBarContainer" onSubmit={goToSearch}>
-        <input ref= {inputRef} id = "SearchBar_searchInput" type = "text" autoComplete='off' onChange={fetchResults} placeholder="Search by Book Title or ISBN"/>
+        <input ref= {inputRef} id = "SearchBar_searchInput" type = "text" autoComplete='off' onChange={fetchResults} placeholder="Harry Potter or ISBN"/>
         <SearchBarContext.Provider value={{setResults, inputRef}}>
           <SearchBarResults results={results}/>
         </SearchBarContext.Provider>
