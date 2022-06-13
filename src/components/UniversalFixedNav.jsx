@@ -34,6 +34,8 @@ function UniversalFixedNav() {
   const location = useLocation()
   const navigate = useNavigate();
   const searchRef = useRef();
+  const toggleRef = useRef();
+
 
   const goToSearch = (event) => {
     event.preventDefault();
@@ -46,10 +48,12 @@ function UniversalFixedNav() {
 
   const goToLogIn = () => {
     navigate(`/log-in`);
+    toggleRef.current.click();
   }
 
   const goToSignUp = () => {
     navigate(`/sign-up`);
+    toggleRef.current.click();
   }
 
   const goToSettings = () => {
@@ -58,6 +62,7 @@ function UniversalFixedNav() {
 
   const goToProfile = () => {
     navigate(`/users/${userID}`);
+    toggleRef.current.click();
   }
 
   const goToCreateReflection = () => {
@@ -72,6 +77,7 @@ function UniversalFixedNav() {
       };
       await fetch('https://apiquotera.kennyparedes.com/logout', requestOptions);
       navigate(`/`);
+      toggleRef.current.click();
     } catch (err){
         console.log(err);
     }
@@ -121,7 +127,7 @@ function UniversalFixedNav() {
           </div>
         </div>
       </div>
-      <div  id='UniversalFixedNav_toggle' onClick={toggleMenu}>
+      <div ref={toggleRef} id='UniversalFixedNav_toggle' onClick={toggleMenu}>
         <span className='UniversalFixedNav_toggleBar'></span>
         <span className='UniversalFixedNav_toggleBar'></span>
         <span className='UniversalFixedNav_toggleBar'></span>
