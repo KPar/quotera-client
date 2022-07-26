@@ -8,6 +8,20 @@
     margin-top: 200px;
     text-align: center;
   }
+
+#Home_descPopUp {
+  position: absolute;
+  text-align: left;
+  padding: 15px;
+  color: white;
+  background-color: rgb(41, 124, 233);
+  font-family: "Source Sans Pro", sans-serif;
+  margin: 15px;
+  top: 0;
+  max-width: 450px;
+  border-radius: 10px;
+  cursor: pointer;
+}
   
 #Home_siteName {
     font-size: 90px;
